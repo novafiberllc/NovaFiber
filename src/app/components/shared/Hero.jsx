@@ -8,9 +8,9 @@ export default function Hero() {
       <header className="w-full h-screen max-w-360 mx-auto flex flex-col">
         {/* Menu */}
         <nav className="flex justify-between items-center pt-5 md:pt-10 px-5 md:px-20 md:mb-10">
-          <div className="text-white text-[1.75rem] font-bold">
+          <a href="#" className="text-white text-[1.75rem] font-bold">
             NovaFiber LLC
-          </div>
+          </a>
           <div className="hidden md:flex space-x-10">
             <a href="#features" className="navbar-item">
               Features
