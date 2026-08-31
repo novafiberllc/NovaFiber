@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${roboto.variable} h-full antialiased`}>
       <body className="flex flex-col items-center w-full">
         <Hero />
-        <main className="flex flex-col items-center">{children}</main>
+        <main className="flex w-full flex-col items-center">{children}</main>
         <Footer />
       </body>
     </html>

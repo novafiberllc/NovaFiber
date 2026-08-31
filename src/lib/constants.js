@@ -37,7 +37,7 @@ const testimonials = [
     name: "Pak Budi",
     role: "Pengusaha",
     quote: "Desain interior yang sangat memuaskan dan elegan.",
-    rating: 5,
+    rating: 4,
     bgImage:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
     avatar:
@@ -133,6 +133,49 @@ const works = [
   },
 ];
 
+const services = [
+  {
+    title: "Couch & Sofa Cleaning",
+    description:
+      "Professional deep cleaning for sofas, couches and sectionals. We help remove built-up dirt, everyday spills, stains and odors to refresh your furniture.",
+    image: "/image/services/couch-sofa-cleaning.jpg",
+    alt: "Professional couch and sofa cleaning",
+    href: null,
+  },
+  {
+    title: "Upholstery Cleaning",
+    description:
+      "Professional cleaning for upholstered furniture including chairs, sectionals and other compatible fabric furniture affected by dirt, spills, stains and everyday use.",
+    image: "/image/services/upholstery-cleaning.jpg",
+    alt: "Professional upholstery cleaning",
+    href: null,
+  },
+  {
+    title: "Mattress Cleaning",
+    description:
+      "Professional mattress cleaning to remove accumulated dirt, visible spots and compatible odors while refreshing the sleeping surface.",
+    image: "/image/services/mattress-cleaning.jpg",
+    alt: "Professional mattress cleaning",
+    href: null,
+  },
+  {
+    title: "Carpet Cleaning",
+    description:
+      "Professional residential carpet cleaning designed to remove built-up soil, everyday stains and odors and improve the appearance of your carpets.",
+    image: "/image/services/carpet-cleaning.jpg",
+    alt: "Professional residential carpet cleaning",
+    href: null,
+  },
+  {
+    title: "Pet Stain & Odor Removal",
+    description:
+      "Targeted treatment for pet-related stains and odors on compatible upholstery and carpets. Results depend on the material, age of the stain and depth of contamination.",
+    image: "/image/services/pet-stain-odor-removal.jpg",
+    alt: "Pet stain and odor treatment for upholstery and carpet",
+    href: null,
+  },
+];
+
 const modalContent = {
   Pricing: {
     title: "Pricing",
@@ -201,4 +244,4 @@ const modalContent = {
   },
 };
 
-export { menuItems, testimonials, works, modalContent };
+export { menuItems, testimonials, works, services, modalContent };

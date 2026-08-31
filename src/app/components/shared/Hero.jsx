@@ -9,7 +9,7 @@ export default function Hero() {
         {/* Menu */}
         <nav className="flex justify-between items-center pt-5 md:pt-10 px-5 md:px-20 md:mb-10">
           <a href="#" className="text-white text-[1.75rem] font-bold">
-            NovaFiber LLC
+            NovaFiber
           </a>
           <div className="hidden md:flex space-x-10">
             <a href="#features" className="navbar-item">
@@ -21,9 +21,9 @@ export default function Hero() {
             <a href="#pricing" className="navbar-item">
               Pricing
             </a>
-            {/* <a href="#testimonials" className="navbar-item">
-              Testimonials
-            </a> */}
+            <a href="#testimonials" className="navbar-item">
+              CUSTOMER REVIEWS
+            </a>
             <a href="#contacts" className="navbar-item">
               Contacts
             </a>
@@ -45,6 +45,9 @@ export default function Hero() {
             <li className="mb-2 text-2xl">Professional equipment</li>
             <li className="mb-2 text-2xl">Safe for pets & kids</li>
             <li className="mb-2 text-2xl">Discounts and Low Prices</li>
+            <li className="mb-2 text-2xl">
+              ★ 4.8 Google Rating | Bolingbrook, IL
+            </li>
           </ul>
 
           <div className="md:hidden sm:pl-12">
