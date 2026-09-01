@@ -45,7 +45,7 @@ export default function Features() {
             />
           </button>
         </div>
-        <div id="pricing" className="max-w-71 desktop:justify-self-center">
+        <div className="max-w-71 desktop:justify-self-center">
           <p className="text-2xl font-bold mb-5">Flexible Pricing</p>
           <p className="mb-3.5 text-justify">
             Enjoy transparent, flexible pricing tailored to your needs. We

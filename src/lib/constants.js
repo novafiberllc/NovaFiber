@@ -84,50 +84,50 @@ const testimonials = [
 const works = [
   {
     id: 1,
-    name: "White Chair",
+    name: "Upholstered White Chair before & after professional cleaning result",
     before: "/image/products/photo_5_1.jpg",
     after: "/image/products/photo_5_2.jpg",
   },
   {
     id: 2,
-    name: "Red Sofa",
+    name: "Upholstered Red Sofa before & after professional cleaning result",
     before: "/image/products/photo_4_1.jpg",
     after: "/image/products/photo_4_2.jpg",
   },
   {
     id: 3,
-    name: "White Sofa",
+    name: "Upholstered White Sofa before & after professional cleaning result",
     before: "/image/products/photo_6_1.jpg",
     after: "/image/products/photo_6_2.jpg",
   },
   {
     id: 4,
-    name: "Gray Sofa",
+    name: "Upholstered Gray Sofa before & after professional cleaning result",
     before: "/image/products/photo_2_1.jpg",
     after: "/image/products/photo_2_2.jpg",
   },
   {
     id: 5,
-    name: "White Mattress",
+    name: "White Mattress before & after professional cleaning result",
     before: "/image/products/photo_3_1.jpg",
     after: "/image/products/photo_3_2.jpg",
   },
   {
     id: 6,
-    name: "White Sofa",
+    name: "Upholstered White Sofa before & after professional cleaning result",
     before: "/image/products/photo_1_1.jpg",
     after: "/image/products/photo_1_2.jpg",
   },
 
   {
     id: 7,
-    name: "White Mattress",
+    name: "White Mattress before & after professional cleaning result",
     before: "/image/products/photo_7_1.jpg",
     after: "/image/products/photo_7_2.jpg",
   },
   {
     id: 8,
-    name: "Gray Sofa",
+    name: "Upholstered Gray Sofa before & after professional cleaning result",
     before: "/image/products/photo_8_1.jpg",
     after: "/image/products/photo_8_2.jpg",
   },
