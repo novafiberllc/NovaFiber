@@ -8,11 +8,11 @@ export default function Products() {
   return (
     <section
       id="products"
-      className="max-w-360 w-full py-5 flex flex-col items-center justify-center overflow-hidden"
+      className="max-w-360 w-full py-15 flex flex-col items-center justify-center overflow-hidden"
     >
-      <p className="text-3xl sm:text-4xl font-bold text-center">
+      <h2 className="text-3xl sm:text-4xl font-bold text-center">
         BEFORE & AFTER
-      </p>
+      </h2>
       <p className="px-5 text-gray-600 text-center">
         Real Cleaning Results from upholstery, sofa and furniture cleaning
         performed by NovaFiber · Bolingbrook, IL

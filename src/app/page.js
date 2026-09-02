@@ -1,4 +1,5 @@
 import Features from "./components/main-page/Features";
+import FAQ from "./components/main-page/FAQ";
 import Pricing from "./components/main-page/Pricing";
 import Products from "./components/main-page/Products";
 import Services from "./components/main-page/Services";
@@ -15,6 +16,7 @@ export default function Home() {
       {/* Testimonials section is currently not needed, can be added back later
       if desired */}
       <Testimonials />
+      <FAQ />
     </>
   );
 }

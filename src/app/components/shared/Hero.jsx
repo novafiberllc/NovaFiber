@@ -1,6 +1,7 @@
 "use client";
 
 import MobileMenu from "@/app/components/shared/MobileMenu";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -22,7 +23,7 @@ export default function Hero() {
               Pricing
             </a>
             <a href="#testimonials" className="navbar-item">
-              CUSTOMER REVIEWS
+              Customer Reviews
             </a>
             <a href="#contacts" className="navbar-item">
               Contacts
@@ -50,12 +51,12 @@ export default function Hero() {
             </li>
           </ul>
 
-          <div className="md:hidden sm:pl-12">
+          <div className=" sm:pl-12">
             <a
               href="sms:+13312537855"
-              className="bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-amber-600 hover:bg-amber-700 text-white text-xl font-bold py-4 px-8 rounded "
             >
-              Message Us
+              Text Us
             </a>
           </div>
         </div>

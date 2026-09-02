@@ -68,9 +68,9 @@ export default function Services() {
     >
       <div className="mx-auto flex w-full flex-col items-center">
         <div className="max-w-3xl text-center">
-          <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
+          {/* <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
             OUR SERVICES
-          </p>
+          </p> */}
           <h2 className="text-3xl font-bold sm:text-4xl">
             Professional Cleaning Services
           </h2>

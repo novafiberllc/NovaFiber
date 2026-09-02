@@ -8,13 +8,9 @@ export default function Testimonials() {
   return (
     <section
       id="testimonials"
-      className="max-w-360 w-full py-5  flex flex-col items-center justify-center overflow-hidden"
+      className="max-w-360 w-full py-15  flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* <p className="mb-5 text-[1.25rem] text-[#E58411] tracking-widest">
-        What Our Customers Say ★ 4.8 on Google · 24 reviews
-      </p> */}
-
-      <p className="text-4xl font-bold  max-w-103">Our Client Reviews</p>
+      <h2 className="text-4xl font-bold  max-w-103">Our Client Reviews</h2>
 
       <p className="mb-5 text-[1.25rem] text-[#E58411] tracking-widest">
         What Our Customers Say

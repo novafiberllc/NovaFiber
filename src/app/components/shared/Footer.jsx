@@ -113,7 +113,7 @@ export default function Footer() {
 
                 <p className="mb-2 mt-5 text-amber-600 text-xl">Text Us</p>
 
-                {/* WhatsApp */}
+                {/* SMS */}
                 <a
                   href="sms:+13312537855"
                   className="relative flex flex-row items-center gap-2.5"
@@ -127,7 +127,7 @@ export default function Footer() {
                   <p>+13312537855</p>
                 </a>
 
-                {/* SMS */}
+                {/* WhatsApp */}
                 <a
                   href="https://wa.me/13312537855"
                   className="relative flex flex-row items-center gap-2.5"
