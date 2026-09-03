@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { businessInfo, contactLinks } from "@/lib/business";
 
 export default function Footer() {
   return (
@@ -29,13 +30,16 @@ export default function Footer() {
                 <p className="mb-2 text-amber-600 text-xl">Contacts</p>
 
                 {/* Address */}
-                <p>Bolingbrook, IL, United States</p>
-                <p>Illinois 60440</p>
+                <p>
+                  {businessInfo.location.city}, {businessInfo.location.region},
+                  United States
+                </p>
+                <p>Illinois {businessInfo.location.postalCode}</p>
 
                 {/* Telephone */}
                 <a
-                  href="tel:+13312537855"
-                  className="relative flex flex-row items-center gap-2.5"
+                  href={contactLinks.telephone}
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                 >
                   <Image
                     src={"/svg/telephone.svg"}
@@ -43,13 +47,13 @@ export default function Footer() {
                     width={20}
                     height={20}
                   />
-                  <p>+1 (331) 253-7855</p>
+                  <p>{businessInfo.phoneDisplay}</p>
                 </a>
 
                 {/* Email */}
                 <a
-                  href="mailto:novafiberllc@gmail.com"
-                  className="relative flex flex-row items-center gap-2.5"
+                  href={contactLinks.email}
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                 >
                   <Image
                     src={"/svg/email.svg"}
@@ -57,12 +61,12 @@ export default function Footer() {
                     width={20}
                     height={20}
                   />
-                  <p>novafiberllc@gmail.com</p>
+                  <p>{businessInfo.email}</p>
                 </a>
 
                 <a
-                  href="https://maps.app.goo.gl/38Ag59oe1xf9eJRz9"
-                  className="relative flex flex-row items-center gap-2.5"
+                  href={businessInfo.socialProfiles.google}
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -81,10 +85,10 @@ export default function Footer() {
                 <p className="mb-2 text-amber-600 text-xl">Follow Us</p>
                 {/* Facebook */}
                 <a
-                  href="https://www.facebook.com/profile.php?id=61576447468204"
+                  href={businessInfo.socialProfiles.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative flex flex-row items-center gap-2.5"
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                 >
                   <Image
                     src={"/svg/facebook.svg"}
@@ -97,10 +101,10 @@ export default function Footer() {
 
                 {/* Instagram */}
                 <a
-                  href="https://www.instagram.com/novafiberllc/"
+                  href={businessInfo.socialProfiles.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="relative flex flex-row items-center gap-2.5"
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                 >
                   <Image
                     src={"/svg/instagram.svg"}
@@ -115,8 +119,8 @@ export default function Footer() {
 
                 {/* SMS */}
                 <a
-                  href="sms:+13312537855"
-                  className="relative flex flex-row items-center gap-2.5"
+                  href={contactLinks.sms}
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                 >
                   <Image
                     src={"/svg/sms.svg"}
@@ -124,13 +128,13 @@ export default function Footer() {
                     width={20}
                     height={20}
                   />
-                  <p>+13312537855</p>
+                  <p>{businessInfo.phone}</p>
                 </a>
 
                 {/* WhatsApp */}
                 <a
-                  href="https://wa.me/13312537855"
-                  className="relative flex flex-row items-center gap-2.5"
+                  href={contactLinks.whatsapp}
+                  className="relative flex min-h-11 flex-row items-center gap-2.5"
                 >
                   <Image
                     src={"/svg/whatsapp.svg"}
@@ -147,6 +151,7 @@ export default function Footer() {
                 href="https://sites.google.com/view/novafiberllcprivacypolicy/privacy-policy"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="inline-flex min-h-11 items-center"
               >
                 Privacy policy
               </a>

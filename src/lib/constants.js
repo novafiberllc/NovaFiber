@@ -1,9 +1,12 @@
+import { businessInfo } from "@/lib/business";
+
 const menuItems = [
-  { href: "#features", label: "Features" },
-  { href: "#products", label: "Products" },
-  { href: "#pricing", label: "Pricing" },
-  // { href: "#testimonials", label: "Testimonials" },
-  { href: "#contacts", label: "Contacts" },
+  { href: "/#features", label: "Features" },
+  { href: "/#services", label: "Services" },
+  { href: "/#products", label: "Products" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/#testimonials", label: "Customer Reviews" },
+  { href: "/#contacts", label: "Contacts" },
   { href: "#top", label: "Back to top", isBackToTop: true },
 ];
 
@@ -140,7 +143,7 @@ const services = [
       "Professional deep cleaning for sofas, couches and sectionals. We help remove built-up dirt, everyday spills, stains and odors to refresh your furniture.",
     image: "/image/services/couch-sofa-cleaning.jpg",
     alt: "Professional couch and sofa cleaning",
-    href: null,
+    href: "/services/couch-sofa-cleaning/",
   },
   {
     title: "Upholstery Cleaning",
@@ -179,8 +182,7 @@ const services = [
 const modalContent = {
   Pricing: {
     title: "Pricing",
-    description:
-      "Every job is different, so pricing depends on the type of cleaning, item size, condition, and number of pieces. We offer bundle discounts for multiple items. For a fast and accurate quote, text (331) 253-7855 with a brief description or photos — we’ll get back to you quickly with pricing and availability.",
+    description: `Every job is different, so pricing depends on the type of cleaning, item size, condition, and number of pieces. We offer bundle discounts for multiple items. For a fast and accurate quote, text ${businessInfo.phoneDisplay} with a brief description or photos — we’ll get back to you quickly with pricing and availability.`,
   },
   Area: {
     title: "Service Area",

@@ -1,39 +1,13 @@
 "use client";
 
-import MobileMenu from "@/app/components/shared/MobileMenu";
-import Image from "next/image";
+import SiteHeader from "@/app/components/shared/SiteHeader";
+import { businessInfo, contactLinks } from "@/lib/business";
 
 export default function Hero() {
   return (
     <section className="max-w-360 w-full md:w-218.5 desktop:w-full bg-[url('/image/hero1.jpg')] bg-cover bg-center min-h-screen min-w-full ">
-      <header className="w-full h-screen max-w-360 mx-auto flex flex-col">
-        {/* Menu */}
-        <nav className="flex justify-between items-center pt-5 md:pt-10 px-5 md:px-20 md:mb-10">
-          <a href="#" className="text-white text-[1.75rem] font-bold">
-            NovaFiber
-          </a>
-          <div className="hidden md:flex space-x-10">
-            <a href="#features" className="navbar-item">
-              Features
-            </a>
-            <a href="#products" className="navbar-item">
-              Products
-            </a>
-            <a href="#pricing" className="navbar-item">
-              Pricing
-            </a>
-            <a href="#testimonials" className="navbar-item">
-              Customer Reviews
-            </a>
-            <a href="#contacts" className="navbar-item">
-              Contacts
-            </a>
-          </div>
-          {/* Mobile Menu */}
-          <MobileMenu />
-        </nav>
-
-        {/* Hero Content */}
+      <div className="w-full h-screen max-w-360 mx-auto flex flex-col">
+        <SiteHeader />
 
         <div className="px-5 md:px-20 text-white flex flex-col items-start justify-center gap-6 grow">
           <h1 className="text-4xl md:text-7xl font-bold mb-4 text-center">
@@ -47,20 +21,21 @@ export default function Hero() {
             <li className="mb-2 text-2xl">Safe for pets & kids</li>
             <li className="mb-2 text-2xl">Discounts and Low Prices</li>
             <li className="mb-2 text-2xl">
-              ★ 4.8 Google Rating | Bolingbrook, IL
+              ★ {businessInfo.googleRating} Google Rating |{" "}
+              {businessInfo.location.label}
             </li>
           </ul>
 
-          <div className=" sm:pl-12">
+          <div className="sm:pl-12">
             <a
-              href="sms:+13312537855"
-              className="bg-amber-600 hover:bg-amber-700 text-white text-xl font-bold py-4 px-8 rounded "
+              href={contactLinks.sms}
+              className="inline-flex min-h-11 items-center rounded bg-amber-600 px-8 py-4 text-xl font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
             >
               Text Us
             </a>
           </div>
         </div>
-      </header>
+      </div>
       <div className="min-h-50 min-w-full bg-linear-to-t from-white to-transparent z-10"></div>
     </section>
   );

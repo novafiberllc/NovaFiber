@@ -3,6 +3,7 @@
 import ReviewCard from "../shared/ReviewCard";
 import Slider from "../shared/Slider";
 import { testimonials } from "@/lib/constants";
+import { businessInfo } from "@/lib/business";
 
 export default function Testimonials() {
   return (
@@ -21,7 +22,7 @@ export default function Testimonials() {
       </div>
 
       <p className="mb-5 text-[1.25rem] text-[#E58411] tracking-widest">
-        ★ 4.8 on Google
+        ★ {businessInfo.googleRating} on Google
       </p>
     </section>
   );

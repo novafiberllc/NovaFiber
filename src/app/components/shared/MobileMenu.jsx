@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X, ArrowUp } from "lucide-react";
 import { menuItems } from "@/lib/constants";
+import { contactLinks } from "@/lib/business";
 
-export default function MobileMenu() {
+export default function MobileMenu({ tone = "light" }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [isPastHero, setIsPastHero] = useState(false);
@@ -60,15 +61,21 @@ export default function MobileMenu() {
 
   // Show floating button on mobile when scrolling up and past hero
   const shouldShowFloatingButton = isPastHero && isScrollingUp;
+  const menuButtonClass =
+    tone === "light"
+      ? "text-white hover:text-gray-200 focus:ring-white"
+      : "text-gray-900 hover:text-amber-700 focus:ring-amber-600";
 
   return (
     <>
       {/* Hamburger Button in navbar - always visible on mobile */}
       <button
+        type="button"
         onClick={toggleMenu}
-        className="md:hidden flex items-center justify-center text-white hover:text-gray-200 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent rounded"
+        className={`flex min-h-11 min-w-11 items-center justify-center rounded transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-transparent desktop:hidden ${menuButtonClass}`}
         aria-label="Toggle menu"
         aria-expanded={isOpen}
+        aria-controls="mobile-navigation"
       >
         {isOpen ? <X size={28} /> : <Menu size={28} />}
       </button>
@@ -77,10 +84,12 @@ export default function MobileMenu() {
 
       {shouldShowFloatingButton && (
         <button
+          type="button"
           onClick={toggleMenu}
-          className="md:hidden fixed top-3 left-3 z-50 flex items-center justify-center text-white bg-linear-to-br from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 transition-all duration-300 rounded-full p-4 shadow-lg hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent"
+          className="fixed top-3 left-3 z-50 flex min-h-11 min-w-11 items-center justify-center rounded-full bg-linear-to-br from-gray-600 to-gray-700 p-4 text-white shadow-lg transition-all duration-300 hover:from-gray-700 hover:to-gray-800 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-transparent desktop:hidden"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
+          aria-controls="mobile-navigation"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -88,6 +97,9 @@ export default function MobileMenu() {
 
       {/* Mobile Menu Panel */}
       <div
+        id="mobile-navigation"
+        aria-hidden={!isOpen}
+        inert={!isOpen ? true : undefined}
         className={`fixed left-0 top-0 min-h-screen w-64 bg-linear-to-b from-gray-900 to-gray-800 shadow-lg z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
@@ -96,8 +108,9 @@ export default function MobileMenu() {
         <div className="flex items-center justify-between p-5 border-b border-gray-700">
           <span className="text-white text-lg font-semibold">Menu</span>
           <button
+            type="button"
             onClick={toggleMenu}
-            className="text-white hover:text-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-white rounded"
+            className="flex min-h-11 min-w-11 items-center justify-center rounded text-white transition-colors hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-white"
             aria-label="Close menu"
           >
             <X size={24} />
@@ -119,14 +132,23 @@ export default function MobileMenu() {
               {item.label}
             </a>
           ))}
+          <a
+            href={contactLinks.telephone}
+            onClick={() => setIsOpen(false)}
+            className="flex min-h-11 items-center border-b border-gray-700 px-5 py-3 text-white transition-colors duration-200 hover:bg-gray-700"
+          >
+            Call Us
+          </a>
         </nav>
       </div>
 
       {/* Overlay/Backdrop - closes menu when clicked outside */}
       {isOpen && (
-        <div
+        <button
+          type="button"
+          aria-label="Close menu"
           onClick={() => setIsOpen(false)}
-          className="fixed inset-0 bg-transparent z-40 md:hidden"
+          className="fixed inset-0 z-40 bg-transparent desktop:hidden"
         />
       )}
     </>

@@ -1,7 +1,9 @@
 import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
+import Link from "next/link";
 import { services } from "@/lib/constants";
+import { contactLinks } from "@/lib/business";
 
 function ServiceCard({ service, index }) {
   const imagePath = path.join(
@@ -17,10 +19,8 @@ function ServiceCard({ service, index }) {
         ? "md:col-start-2 desktop:col-start-4"
         : "";
 
-  return (
-    <article
-      className={`h-full overflow-hidden rounded-4xl bg-white shadow-sm transition-shadow duration-200 hover:shadow-lg md:col-span-2 desktop:col-span-2 ${desktopPosition}`}
-    >
+  const cardContent = (
+    <>
       <div className="relative aspect-4/3 w-full overflow-hidden bg-gray-100">
         {hasImage ? (
           <Image
@@ -48,14 +48,29 @@ function ServiceCard({ service, index }) {
         </p>
 
         {service.href && (
-          <a
-            href={service.href}
-            className="mt-6 self-start text-amber-600 transition-opacity hover:opacity-80 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
-          >
+          <span className="mt-6 self-start text-amber-600 transition-opacity group-hover:opacity-80">
             Learn more
-          </a>
+          </span>
         )}
       </div>
+    </>
+  );
+
+  return (
+    <article
+      className={`h-full overflow-hidden rounded-4xl bg-white shadow-sm transition-shadow duration-200 hover:shadow-lg md:col-span-2 desktop:col-span-2 ${desktopPosition}`}
+    >
+      {service.href ? (
+        <Link
+          href={service.href}
+          aria-label={`Learn more about ${service.title}`}
+          className="group block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
+        >
+          {cardContent}
+        </Link>
+      ) : (
+        cardContent
+      )}
     </article>
   );
 }
@@ -92,7 +107,7 @@ export default function Services() {
             you choose the right cleaning option.
           </p>
           <a
-            href="sms:+13312537855"
+            href={contactLinks.sms}
             className="shrink-0 rounded bg-amber-600 px-4 py-2 font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
           >
             Get a Quote

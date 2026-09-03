@@ -1,3 +1,6 @@
+import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
+import { contactLinks } from "@/lib/business";
+
 const pricingGroups = [
   {
     title: "Couch & Sofa Cleaning",
@@ -46,8 +49,8 @@ function PriceCard({ group }) {
           >
             <dt className="min-w-0 text-gray-700">{item.name}</dt>
             <dd className="shrink-0 font-bold text-gray-900">
-              <span className="mr-1 text-sm font-normal text-gray-500">
-                from
+              <span className="text-sm font-normal text-gray-500">
+                {"from "}
               </span>
               {item.price}
             </dd>
@@ -68,9 +71,9 @@ function CarpetPriceCard() {
       <h3 className="text-2xl font-bold">Carpet Cleaning</h3>
 
       <p className="mt-7 text-gray-500">
-        <span className="mr-2 text-lg">from</span>
+        <span className="text-lg">{"from "}</span>
         <span className="text-4xl font-bold text-gray-900">$50</span>
-        <span className="ml-2 text-lg text-gray-700">per room</span>
+        <span className="text-lg text-gray-700">{" per room"}</span>
       </p>
 
       <p className="mt-6 leading-relaxed text-gray-600">
@@ -128,15 +131,10 @@ export default function Pricing() {
           </p>
 
           <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+            <ResponsiveQuoteLink className="rounded bg-amber-600 px-4 py-3 text-center font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600" />
             <a
-              href="sms:+13312537855"
-              className="rounded bg-amber-600 px-4 py-3 text-center font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
-            >
-              Send Photos for a Quote
-            </a>
-            <a
-              href="tel:+13312537855"
-              className="rounded border border-amber-600 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
+              href={contactLinks.telephone}
+              className="inline-flex min-h-11 items-center justify-center rounded border border-amber-600 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
             >
               Call Us
             </a>
