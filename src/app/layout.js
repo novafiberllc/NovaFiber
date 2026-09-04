@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${roboto.variable} h-full antialiased`}>
-      <body className="flex flex-col items-center w-full">
+      <body className="flex w-full flex-col items-center">
         <main className="flex w-full flex-col items-center">{children}</main>
         <Footer />
       </body>

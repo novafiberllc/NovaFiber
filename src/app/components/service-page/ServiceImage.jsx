@@ -35,7 +35,7 @@ export default function ServiceImage({
           fill={true}
           sizes={sizes}
           priority={priority}
-          className="object-аuto"
+          className="object-cover"
         />
       ) : (
         <div

@@ -8,14 +8,14 @@ export default function ServiceFAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <div className="mx-auto mt-10 max-w-4xl border-t border-gray-200">
+    <div className="mx-auto mt-10 max-w-4xl border-t border-gray-300">
       {couchSofaFaqs.map((faq, index) => {
         const isOpen = openIndex === index;
         const triggerId = `couch-faq-trigger-${index + 1}`;
         const panelId = `couch-faq-panel-${index + 1}`;
 
         return (
-          <article key={faq.question} className="border-b border-gray-200">
+          <article key={faq.question} className="border-b border-gray-300">
             <h3>
               <button
                 id={triggerId}
