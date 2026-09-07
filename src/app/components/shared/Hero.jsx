@@ -14,7 +14,9 @@ function ActionLink({ action, variant }) {
   const className = action.className || buttonStyles[variant];
 
   if (action.type === "responsiveQuote") {
-    return <ResponsiveQuoteLink className={className} />;
+    return (
+      <ResponsiveQuoteLink className={className} message={action.message} />
+    );
   }
 
   return (

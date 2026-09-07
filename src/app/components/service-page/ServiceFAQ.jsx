@@ -4,15 +4,18 @@ import { useState } from "react";
 import { Minus, Plus } from "lucide-react";
 import { couchSofaFaqs } from "@/lib/couch-sofa-cleaning";
 
-export default function ServiceFAQ() {
+export default function ServiceFAQ({
+  faqs = couchSofaFaqs,
+  idPrefix = "couch-faq",
+}) {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
     <div className="mx-auto mt-10 max-w-4xl border-t border-gray-300">
-      {couchSofaFaqs.map((faq, index) => {
+      {faqs.map((faq, index) => {
         const isOpen = openIndex === index;
-        const triggerId = `couch-faq-trigger-${index + 1}`;
-        const panelId = `couch-faq-panel-${index + 1}`;
+        const triggerId = `${idPrefix}-trigger-${index + 1}`;
+        const panelId = `${idPrefix}-panel-${index + 1}`;
 
         return (
           <article key={faq.question} className="border-b border-gray-300">

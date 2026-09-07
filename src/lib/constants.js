@@ -151,7 +151,7 @@ const services = [
       "Professional cleaning for upholstered furniture including chairs, sectionals and other compatible fabric furniture affected by dirt, spills, stains and everyday use.",
     image: "/image/services/upholstery-cleaning.jpg",
     alt: "Professional upholstery cleaning",
-    href: null,
+    href: "/services/upholstery-cleaning/",
   },
   {
     title: "Mattress Cleaning",
