@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
+import { MoveRight } from "lucide-react";
 import { services } from "@/lib/constants";
 import { contactLinks } from "@/lib/business";
 
@@ -41,15 +42,22 @@ function ServiceCard({ service, index }) {
         )}
       </div>
 
-      <div className="flex h-full flex-col px-6 py-7">
+      <div className="flex flex-1 flex-col px-6 py-7">
         <h3 className="text-2xl font-bold">{service.title}</h3>
         <p className="mt-4 leading-relaxed text-gray-600">
           {service.description}
         </p>
 
         {service.href && (
-          <span className="mt-6 self-start text-amber-700 transition-colors group-hover:text-amber-800">
-            Learn more
+          <span className="mt-auto flex items-center justify-start gap-3.5 self-start pt-6 text-amber-700 transition-colors group-hover:text-amber-800 group-focus-visible:text-amber-800">
+            <span>Learn more</span>
+            <MoveRight
+              aria-hidden="true"
+              focusable="false"
+              className="max-w-12"
+              strokeWidth={0.5}
+              size={42}
+            />
           </span>
         )}
       </div>
@@ -64,7 +72,7 @@ function ServiceCard({ service, index }) {
         <Link
           href={service.href}
           aria-label={`Learn more about ${service.title}`}
-          className="group block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+          className="group flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
         >
           {cardContent}
         </Link>
