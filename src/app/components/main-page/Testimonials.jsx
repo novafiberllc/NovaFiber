@@ -13,7 +13,7 @@ export default function Testimonials() {
     >
       <h2 className="text-4xl font-bold  max-w-103">Our Client Reviews</h2>
 
-      <p className="mb-5 text-[1.25rem] text-[#E58411] tracking-widest">
+      <p className="mb-5 text-[1.25rem] text-amber-700 tracking-widest">
         What Our Customers Say
       </p>
 
@@ -21,7 +21,7 @@ export default function Testimonials() {
         <Slider slides={testimonials} CardComponent={ReviewCard} />
       </div>
 
-      <p className="mb-5 text-[1.25rem] text-[#E58411] tracking-widest">
+      <p className="mb-5 text-[1.25rem] text-amber-700 tracking-widest">
         ★ {businessInfo.googleRating} on Google
       </p>
     </section>

@@ -159,7 +159,7 @@ const services = [
       "Professional mattress cleaning to remove accumulated dirt, visible spots and compatible odors while refreshing the sleeping surface.",
     image: "/image/services/mattress-cleaning.jpg",
     alt: "Professional mattress cleaning",
-    href: null,
+    href: "/services/mattress-cleaning/",
   },
   {
     title: "Carpet Cleaning",
@@ -167,7 +167,7 @@ const services = [
       "Professional residential carpet cleaning designed to remove built-up soil, everyday stains and odors and improve the appearance of your carpets.",
     image: "/image/services/carpet-cleaning.jpg",
     alt: "Professional residential carpet cleaning",
-    href: null,
+    href: "/services/carpet-cleaning/",
   },
   {
     title: "Pet Stain & Odor Removal",
@@ -175,7 +175,7 @@ const services = [
       "Targeted treatment for pet-related stains and odors on compatible upholstery and carpets. Results depend on the material, age of the stain and depth of contamination.",
     image: "/image/services/pet-stain-odor-removal.jpg",
     alt: "Pet stain and odor treatment for upholstery and carpet",
-    href: null,
+    href: "/services/pet-stain-odor-removal/",
   },
 ];
 

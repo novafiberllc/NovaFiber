@@ -48,7 +48,7 @@ function ServiceCard({ service, index }) {
         </p>
 
         {service.href && (
-          <span className="mt-6 self-start text-amber-600 transition-opacity group-hover:opacity-80">
+          <span className="mt-6 self-start text-amber-700 transition-colors group-hover:text-amber-800">
             Learn more
           </span>
         )}
@@ -64,7 +64,7 @@ function ServiceCard({ service, index }) {
         <Link
           href={service.href}
           aria-label={`Learn more about ${service.title}`}
-          className="group block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
+          className="group block h-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
         >
           {cardContent}
         </Link>
@@ -105,7 +105,7 @@ export default function Services() {
           </p>
           <a
             href={contactLinks.sms}
-            className="shrink-0 rounded bg-amber-600 px-4 py-2 font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
+            className="shrink-0 rounded bg-amber-700 px-4 py-2 font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
             Get a Quote
           </a>

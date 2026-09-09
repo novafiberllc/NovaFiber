@@ -35,11 +35,11 @@ export default function Features() {
               setIsModalOpen(true);
               setModalContent("Area");
             }}
-            className="flex flex-row justify-start items-center gap-3.5 cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
-            <p className="text-amber-600">More Info</p>
+            <p>More Info</p>
             <MoveRight
-              className="text-amber-600 max-w-12"
+              className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
@@ -57,11 +57,11 @@ export default function Features() {
               setIsModalOpen(true);
               setModalContent("Pricing");
             }}
-            className="flex flex-row justify-start items-center gap-3.5 cursor-pointer hover:opacity-80 transition-opacity"
+            className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
-            <p className="text-amber-600">More Info</p>
+            <p>More Info</p>
             <MoveRight
-              className="text-amber-600 max-w-12"
+              className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
@@ -79,11 +79,11 @@ export default function Features() {
               setIsModalOpen(true);
               setModalContent("Materials");
             }}
-            className="flex flex-row justify-start items-center gap-3.5 cursor-pointer"
+            className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
-            <p className="text-amber-600">More Info</p>
+            <p>More Info</p>
             <MoveRight
-              className="text-amber-600 max-w-12"
+              className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />

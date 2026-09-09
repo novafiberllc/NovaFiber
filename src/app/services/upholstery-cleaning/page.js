@@ -181,9 +181,9 @@ const priceFactors = [
 ];
 
 const primaryButton =
-  "rounded bg-amber-600 px-4 py-3 text-center font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600";
+  "rounded bg-amber-700 px-4 py-3 text-center font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700";
 const secondaryButton =
-  "inline-flex min-h-11 items-center justify-center rounded border border-amber-600 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600";
+  "inline-flex min-h-11 items-center justify-center rounded border border-amber-700 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700";
 const whiteSectionCardStyle = "border border-gray-200 bg-[#F7F7F7] shadow-sm";
 
 export default function UpholsteryCleaningPage() {
@@ -264,7 +264,7 @@ export default function UpholsteryCleaningPage() {
                 key={item}
                 className={`rounded-4xl px-6 py-5 font-medium ${whiteSectionCardStyle}`}
               >
-                <span aria-hidden="true" className="mr-3 text-amber-600">
+                <span aria-hidden="true" className="mr-3 text-amber-700">
                   •
                 </span>
                 {item}
@@ -277,7 +277,7 @@ export default function UpholsteryCleaningPage() {
       <section className="w-full max-w-360 bg-[#F7F7F7] px-5 py-10 sm:px-10 md:px-20 desktop:py-20">
         <div className="mx-auto w-full">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
+            <p className="mb-3 text-sm font-medium tracking-widest text-amber-700">
               OUR PROCESS
             </p>
             <h2 className="text-3xl font-bold sm:text-4xl">
@@ -291,7 +291,7 @@ export default function UpholsteryCleaningPage() {
                 key={step.title}
                 className="rounded-4xl border border-gray-200 bg-white px-6 py-7 shadow-sm sm:px-8"
               >
-                <span className="text-sm font-bold text-amber-600">
+                <span className="text-sm font-bold text-amber-700">
                   STEP {index + 1}
                 </span>
                 <h3 className="mt-3 text-2xl font-bold">{step.title}</h3>
@@ -334,7 +334,7 @@ export default function UpholsteryCleaningPage() {
 
       <section className="w-full max-w-360 bg-[#F7F7F7] px-5 py-10 sm:px-10 md:px-20 desktop:py-20">
         <article className="mx-auto max-w-5xl rounded-4xl border border-gray-200 bg-white px-6 py-7 shadow-sm sm:px-8">
-          <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
+          <p className="mb-3 text-sm font-medium tracking-widest text-amber-700">
             STARTING PRICES
           </p>
 
@@ -366,7 +366,7 @@ export default function UpholsteryCleaningPage() {
               <ul className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-1 desktop:grid-cols-2">
                 {priceFactors.map((factor) => (
                   <li key={factor} className="flex gap-3 text-gray-700">
-                    <span aria-hidden="true" className="text-amber-600">
+                    <span aria-hidden="true" className="text-amber-700">
                       •
                     </span>
                     <span>{factor}</span>
@@ -421,7 +421,7 @@ export default function UpholsteryCleaningPage() {
 
       <section className="w-full max-w-360 bg-[#F7F7F7] px-5 py-10 sm:px-10 md:px-20 desktop:py-20">
         <aside className="mx-auto max-w-5xl rounded-4xl border border-amber-200 bg-white px-6 py-8 shadow-sm sm:px-8 md:px-10 md:py-10">
-          <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
+          <p className="mb-3 text-sm font-medium tracking-widest text-amber-700">
             READY TO GET A QUOTE?
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl">

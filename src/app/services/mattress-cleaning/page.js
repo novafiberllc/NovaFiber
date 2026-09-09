@@ -4,35 +4,35 @@ import ServiceImage from "@/app/components/service-page/ServiceImage";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
-import { couchSofaFaqs } from "@/lib/couch-sofa-cleaning";
 import { modalContent } from "@/lib/constants";
+import { mattressFaqs } from "@/lib/mattress-cleaning";
 
-const canonicalUrl = `${businessInfo.siteUrl}/services/couch-sofa-cleaning/`;
+const canonicalUrl = `${businessInfo.siteUrl}/services/mattress-cleaning/`;
 const metadataDescription =
-  "Professional couch and sofa cleaning in Bolingbrook and nearby Chicago suburbs. View pricing, cleaning steps and request a quote from NovaFiber.";
-const socialImage = `${businessInfo.siteUrl}/image/services/couch-sofa-cleaning.jpg`;
+  "Professional mattress cleaning in Bolingbrook, IL for built-up dirt, visible spots, stains and compatible odors. Send photos to NovaFiber for a quote.";
+const socialImage = `${businessInfo.siteUrl}/image/services/mattress-cleaning.jpg`;
 
 export const metadata = {
-  title: "Couch & Sofa Cleaning in Bolingbrook, IL | NovaFiber",
+  title: "Mattress Cleaning in Bolingbrook, IL | NovaFiber",
   description: metadataDescription,
   alternates: {
     canonical: canonicalUrl,
   },
   openGraph: {
-    title: "Couch & Sofa Cleaning in Bolingbrook, IL | NovaFiber",
+    title: "Mattress Cleaning in Bolingbrook, IL | NovaFiber",
     description: metadataDescription,
     url: canonicalUrl,
     type: "website",
     images: [
       {
         url: socialImage,
-        alt: "NovaFiber couch and sofa cleaning service",
+        alt: "NovaFiber mattress cleaning service",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Couch & Sofa Cleaning in Bolingbrook, IL | NovaFiber",
+    title: "Mattress Cleaning in Bolingbrook, IL | NovaFiber",
     description: metadataDescription,
     images: [socialImage],
   },
@@ -66,12 +66,12 @@ const structuredData = {
     {
       "@type": "Service",
       "@id": `${canonicalUrl}#service`,
-      name: "Couch & Sofa Cleaning",
-      serviceType: "Professional couch and sofa cleaning",
+      name: "Mattress Cleaning",
+      serviceType: "Professional mattress cleaning",
       url: canonicalUrl,
+      description: metadataDescription,
       provider: { "@id": businessInfo.businessId },
       areaServed,
-      description: metadataDescription,
     },
     {
       "@type": "BreadcrumbList",
@@ -92,7 +92,7 @@ const structuredData = {
         {
           "@type": "ListItem",
           position: 3,
-          name: "Couch & Sofa Cleaning",
+          name: "Mattress Cleaning",
           item: canonicalUrl,
         },
       ],
@@ -100,7 +100,7 @@ const structuredData = {
     {
       "@type": "FAQPage",
       "@id": `${canonicalUrl}#faq`,
-      mainEntity: couchSofaFaqs.map((faq) => ({
+      mainEntity: mattressFaqs.map((faq) => ({
         "@type": "Question",
         name: faq.question,
         acceptedAnswer: {
@@ -112,35 +112,45 @@ const structuredData = {
   ],
 };
 
+const mattressQuoteMessage = `Hi NovaFiber! I'd like a mattress cleaning quote.
+
+City / ZIP:
+Mattress size:
+Number of mattresses:
+Main stains or problem areas:
+Any odors:
+
+I'll attach photos below.`;
+
 const useCases = [
   "Everyday dirt and buildup",
-  "Food and drink spots",
-  "Visible traffic areas",
+  "Visible spots",
+  "Food or drink spills",
   "Pet-related stains",
   "Odors",
-  "General furniture refresh",
+  "General mattress refresh",
 ];
 
 const processSteps = [
   {
     title: "Inspection",
     description:
-      "We inspect the upholstery, construction and problem areas before cleaning.",
+      "We inspect the mattress, care information and problem areas before cleaning.",
   },
   {
-    title: "Fabric & Condition Check",
+    title: "Mattress & Condition Check",
     description:
-      "The material and condition of the furniture are evaluated to determine an appropriate cleaning approach.",
+      "The material, construction and overall condition are evaluated to determine an appropriate cleaning method.",
   },
   {
     title: "Pre-Treatment",
     description:
-      "Stains and heavily soiled areas may be treated before the main cleaning process when appropriate.",
+      "Compatible stains and heavily soiled areas may be treated before the main cleaning process when appropriate.",
   },
   {
     title: "Professional Cleaning & Extraction",
     description:
-      "Professional upholstery cleaning equipment is used to clean the fabric and extract loosened soil and cleaning solution.",
+      "Professional cleaning equipment is used to clean the mattress surface and extract loosened soil and cleaning solution.",
   },
   {
     title: "Stain & Odor Treatment",
@@ -148,27 +158,27 @@ const processSteps = [
       "Additional treatment may be applied to compatible stains or odor-affected areas when required.",
   },
   {
-    title: "Final Inspection",
+    title: "Final Inspection & Drying Guidance",
     description:
-      "The cleaned furniture is reviewed after the service and any remaining limitations are discussed with the customer.",
+      "The mattress is reviewed after cleaning, and we explain any remaining limitations and appropriate drying guidance.",
   },
 ];
 
 const prices = [
-  ["2 Seats", "$109"],
-  ["3 Seats", "$129"],
-  ["4 Seats", "$139"],
-  ["5 Seats", "$149"],
-  ["6 Seats", "$159"],
+  ["King", "$139"],
+  ["Queen", "$129"],
+  ["Full", "$119"],
+  ["Twin XL", "$109"],
+  ["Twin", "$99"],
 ];
 
 const priceFactors = [
-  "Size of the furniture",
-  "Upholstery material",
+  "Mattress size",
+  "Mattress material and construction",
   "Overall condition",
-  "Stains",
+  "Type and age of stains",
   "Odor treatment",
-  "Number of sections/cushions",
+  "Additional treatment required",
 ];
 
 const primaryButton =
@@ -177,7 +187,7 @@ const secondaryButton =
   "inline-flex min-h-11 items-center justify-center rounded border border-amber-700 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700";
 const whiteSectionCardStyle = "border border-gray-200 bg-[#F7F7F7] shadow-sm";
 
-export default function CouchSofaCleaningPage() {
+export default function MattressCleaningPage() {
   return (
     <>
       <script
@@ -190,13 +200,16 @@ export default function CouchSofaCleaningPage() {
       <section className="w-full bg-white pb-10 desktop:pb-20">
         <Hero
           variant="service"
-          eyebrow="COUCH & SOFA CLEANING"
-          title="Professional Couch & Sofa Cleaning in Bolingbrook, IL"
-          description="Professional deep cleaning for sofas, couches and sectionals in Bolingbrook and surrounding Chicago suburbs. We help remove built-up dirt, everyday spills, stains and odors using cleaning methods selected for the material and condition of the furniture."
-          primaryAction={{ type: "responsiveQuote" }}
+          eyebrow="MATTRESS CLEANING"
+          title="Professional Mattress Cleaning in Bolingbrook, IL"
+          description="Professional deep cleaning for King, Queen, Full, Twin XL and Twin mattresses in Bolingbrook and surrounding Chicago suburbs. We help address built-up dirt, everyday spills, visible spots and compatible stains or odors using professional equipment and a cleaning method selected after inspecting the mattress."
+          primaryAction={{
+            type: "responsiveQuote",
+            message: mattressQuoteMessage,
+          }}
           secondaryAction={{ label: "Call Us", href: contactLinks.telephone }}
-          backgroundImage="/image/services/couch-sofa/hero.jpg"
-          backgroundPosition="center"
+          backgroundImage="/image/services/mattress-cleaning.jpg"
+          backgroundPositionClassName="bg-left md:bg-center"
           overlay="service"
           breadcrumb={
             <nav aria-label="Breadcrumb" className="text-sm text-white/90">
@@ -220,7 +233,7 @@ export default function CouchSofaCleaningPage() {
                 </li>
                 <li aria-hidden="true">&gt;</li>
                 <li aria-current="page" className="py-3 text-white">
-                  Couch &amp; Sofa Cleaning
+                  Mattress Cleaning
                 </li>
               </ol>
             </nav>
@@ -241,9 +254,10 @@ export default function CouchSofaCleaningPage() {
               Is This Service Right for You?
             </h2>
             <p className="mt-5 leading-relaxed text-gray-600">
-              Couch and sofa cleaning is a good option for furniture affected by
-              everyday dirt, spills, visible stains, odors and general wear from
-              daily use.
+              Mattress cleaning is a good option for mattresses affected by
+              everyday dirt, spills, visible spots, odors and general wear from
+              regular use. We inspect the mattress first to determine whether
+              our cleaning process is suitable for its material and condition.
             </p>
           </div>
           <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
@@ -269,7 +283,7 @@ export default function CouchSofaCleaningPage() {
               OUR PROCESS
             </p>
             <h2 className="text-3xl font-bold sm:text-4xl">
-              How Our Couch Cleaning Process Works
+              How Our Mattress Cleaning Process Works
             </h2>
           </div>
 
@@ -299,20 +313,20 @@ export default function CouchSofaCleaningPage() {
               See the Difference
             </h2>
             <p className="mt-5 text-gray-600">
-              Examples of couch and sofa cleaning results.
+              Examples of professional mattress cleaning results.
             </p>
           </div>
           <div className="mt-10 grid grid-cols-1 gap-7 md:grid-cols-2">
             <ServiceImage
-              src="/image/services/couch-sofa/result_1.jpg"
-              alt="Couch before professional cleaning"
-              placeholderLabel="Future before-cleaning result image"
+              src="/image/services/mattress/result_1.jpg"
+              alt="Mattress before-cleaning image"
+              placeholderLabel="Temporary before-cleaning mattress image; final result photo coming soon"
               badge="BEFORE"
             />
             <ServiceImage
-              src="/image/services/couch-sofa/result_2.jpg"
-              alt="Couch after professional cleaning"
-              placeholderLabel="Future after-cleaning result image"
+              src="/image/services/mattress/result_2.jpg"
+              alt="Mattress after-cleaning image"
+              placeholderLabel="Temporary after-cleaning mattress image; final result photo coming soon"
               badge="AFTER"
               badgePosition="right"
             />
@@ -329,13 +343,13 @@ export default function CouchSofaCleaningPage() {
           <div className="grid gap-7 md:grid-cols-2 md:gap-0">
             <div className="md:pr-8">
               <h2 className="text-3xl font-bold sm:text-4xl">
-                Couch &amp; Sofa Cleaning Prices
+                Mattress Cleaning Prices
               </h2>
               <dl className="mt-7">
                 {prices.map(([name, price]) => (
                   <div
                     key={name}
-                    className="flex items-baseline justify-between gap-4 border-b border-gray-200 last:border-0 py-3 first:pt-0"
+                    className="flex items-baseline justify-between gap-4 border-b border-gray-200 py-3 first:pt-0 last:border-0"
                   >
                     <dt className="min-w-0 text-gray-700">{name}</dt>
                     <dd className="shrink-0 font-bold text-gray-900">
@@ -366,11 +380,13 @@ export default function CouchSofaCleaningPage() {
 
           <div className="mt-6 border-t border-gray-200 pt-5">
             <p className="text-sm leading-relaxed text-gray-600">
-              Need a more accurate price? Send us photos of your couch or sofa
-              and we&apos;ll review the details.
+              These are starting prices. The final price may vary based on the
+              mattress condition, stains, odors and any additional treatment
+              required.
             </p>
             <ResponsiveQuoteLink
               className={`${primaryButton} mt-4 w-full sm:w-auto`}
+              message={mattressQuoteMessage}
             />
           </div>
         </article>
@@ -383,12 +399,11 @@ export default function CouchSofaCleaningPage() {
           >
             <h2 className="text-3xl font-bold">What Results Can You Expect?</h2>
             <p className="mt-5 leading-relaxed text-gray-600">
-              Professional cleaning can significantly improve the appearance and
-              condition of many sofas and couches, but not every stain or
-              discoloration can be fully removed. Results depend on the
-              material, the type and age of the stain, previous cleaning
-              attempts and the condition of the furniture. Deep contamination
-              may require additional treatment.
+              Professional cleaning can visibly improve many mattresses, but
+              not every stain, odor or discoloration can be fully removed.
+              Results depend on the mattress material and construction, the
+              type and age of stains, odor depth, previous cleaning attempts
+              and overall condition.
             </p>
           </article>
           <article
@@ -396,9 +411,10 @@ export default function CouchSofaCleaningPage() {
           >
             <h2 className="text-3xl font-bold">After Your Cleaning</h2>
             <p className="mt-5 leading-relaxed text-gray-600">
-              Allow the cleaned furniture to dry fully before normal use. Drying
-              time varies depending on the material, room temperature, humidity,
-              airflow and the amount of moisture used during cleaning.
+              Allow the mattress to dry fully before replacing bedding or
+              sleeping on it. Drying time varies with the material,
+              construction, humidity, room temperature, airflow and the amount
+              of moisture used during cleaning.
             </p>
           </article>
         </div>
@@ -410,43 +426,47 @@ export default function CouchSofaCleaningPage() {
             READY TO GET A QUOTE?
           </p>
           <h2 className="text-3xl font-bold sm:text-4xl">
-            Send Us Photos of Your Couch or Sofa
+            Send Us Photos of Your Mattress
           </h2>
           <p className="mt-5 max-w-4xl leading-relaxed text-gray-600">
-            Send us a few photos of the furniture, tell us your city and
-            describe any stains or odors. We&apos;ll review the details and
+            Send us a photo of the full mattress and close-up photos of stains
+            or problem areas. Include the mattress size, your city or ZIP code
+            and information about any odors. We&apos;ll review the details and
             provide a more accurate quote before scheduling.
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-            <ResponsiveQuoteLink className={primaryButton} />
+            <ResponsiveQuoteLink
+              className={primaryButton}
+              message={mattressQuoteMessage}
+            />
             <a href={contactLinks.telephone} className={secondaryButton}>
               Call Us
             </a>
           </div>
           <p className="mt-7 text-sm leading-relaxed text-gray-600">
-            For the best estimate, include photos of the full item and close-up
-            photos of problem areas.
+            For the best estimate, include photos of the full mattress and
+            close-up photos of stains or problem areas.
           </p>
         </aside>
       </section>
 
       <section
-        aria-labelledby="service-faq-heading"
+        aria-labelledby="mattress-faq-heading"
         className="w-full max-w-360 bg-white px-5 py-10 sm:px-10 md:px-20 desktop:py-20"
       >
         <div className="mx-auto w-full">
           <div className="mx-auto max-w-3xl text-center">
             <h2
-              id="service-faq-heading"
+              id="mattress-faq-heading"
               className="text-3xl font-bold sm:text-4xl"
             >
               Frequently Asked Questions
             </h2>
             <p className="mt-5 leading-relaxed text-gray-600">
-              Helpful details about couch, sofa and sectional cleaning.
+              Helpful details about professional mattress cleaning.
             </p>
           </div>
-          <ServiceFAQ />
+          <ServiceFAQ faqs={mattressFaqs} idPrefix="mattress-faq" />
         </div>
       </section>
     </>

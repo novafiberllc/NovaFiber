@@ -11,13 +11,16 @@ export default function SiteHeader({ tone = "dark", variant = "hero" }) {
     : "text-gray-700 hover:text-amber-700";
   const callClass = isHeroTheme
     ? "border-white text-white hover:bg-white/10"
-    : "border-amber-600 text-amber-700 hover:bg-amber-50";
+    : "border-amber-700 text-amber-700 hover:bg-amber-50";
+  const focusClass = isHeroTheme
+    ? "focus-visible:outline-white"
+    : "focus-visible:outline-amber-700";
 
   return (
     <header className="relative z-20 mx-auto flex w-full max-w-360 items-center justify-between px-5 pt-5 sm:px-10 md:px-20 md:pt-10">
       <Link
         href="/"
-        className={`inline-flex min-h-11 items-center text-[1.75rem] font-bold focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 ${logoClass}`}
+        className={`inline-flex min-h-11 items-center text-[1.75rem] font-bold focus-visible:outline-2 focus-visible:outline-offset-4 ${focusClass} ${logoClass}`}
       >
         NovaFiber
       </Link>
@@ -30,7 +33,7 @@ export default function SiteHeader({ tone = "dark", variant = "hero" }) {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`inline-flex min-h-11 items-center text-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 ${linkClass}`}
+                className={`inline-flex min-h-11 items-center text-lg focus-visible:outline-2 focus-visible:outline-offset-4 ${focusClass} ${linkClass}`}
               >
                 {item.label}
               </Link>

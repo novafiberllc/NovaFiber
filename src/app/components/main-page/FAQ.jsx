@@ -79,12 +79,12 @@ export default function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => toggleItem(index)}
-                    className="flex w-full cursor-pointer items-center justify-between gap-4 py-6 text-left text-lg font-bold text-gray-900 transition-colors hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600 sm:py-7 sm:text-xl"
+                    className="flex w-full cursor-pointer items-center justify-between gap-4 py-6 text-left text-lg font-bold text-gray-900 transition-colors hover:text-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700 sm:py-7 sm:text-xl"
                   >
                     <span className="min-w-0">{faq.question}</span>
                     <span
                       aria-hidden="true"
-                      className="shrink-0 text-amber-600"
+                      className="shrink-0 text-amber-700"
                     >
                       {isOpen ? <Minus size={22} /> : <Plus size={22} />}
                     </span>

@@ -51,7 +51,7 @@ export default function ReviewCard({ item }) {
               <svg
                 key={index}
                 className={`w-4 h-4 ${
-                  index < item.rating ? "text-[#F6B762]" : "text-gray-200"
+                  index < item.rating ? "text-amber-700" : "text-gray-200"
                 }`}
                 fill="currentColor"
                 viewBox="0 0 20 20"

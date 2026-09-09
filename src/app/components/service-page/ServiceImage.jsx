@@ -43,7 +43,7 @@ export default function ServiceImage({
           aria-label={`${alt} placeholder`}
           className="absolute inset-0 flex flex-col items-center justify-center border border-gray-200 bg-[#F7F7F7] px-6 text-center"
         >
-          <span className="text-sm font-medium tracking-widest text-amber-600">
+          <span className="text-sm font-medium tracking-widest text-amber-700">
             IMAGE COMING SOON
           </span>
           <span className="mt-3 max-w-xs text-sm leading-relaxed text-gray-500">

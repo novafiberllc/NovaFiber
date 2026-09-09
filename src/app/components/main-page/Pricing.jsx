@@ -93,7 +93,7 @@ export default function Pricing() {
     >
       <div className="mx-auto w-full">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
+          <p className="mb-3 text-sm font-medium tracking-widest text-amber-700">
             PRICING
           </p>
           <h2 id="pricing-heading" className="text-3xl font-bold sm:text-4xl">
@@ -117,7 +117,7 @@ export default function Pricing() {
           aria-labelledby="photo-quote-heading"
           className="mt-10 rounded-4xl border border-amber-200 bg-white px-6 py-8 shadow-sm sm:px-8 md:px-10 md:py-10"
         >
-          <p className="mb-3 text-sm font-medium tracking-widest text-amber-600">
+          <p className="mb-3 text-sm font-medium tracking-widest text-amber-700">
             NEED A MORE ACCURATE PRICE?
           </p>
           <h3 id="photo-quote-heading" className="text-3xl font-bold">
@@ -131,10 +131,10 @@ export default function Pricing() {
           </p>
 
           <div className="mt-7 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
-            <ResponsiveQuoteLink className="rounded bg-amber-600 px-4 py-3 text-center font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600" />
+            <ResponsiveQuoteLink className="rounded bg-amber-700 px-4 py-3 text-center font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700" />
             <a
               href={contactLinks.telephone}
-              className="inline-flex min-h-11 items-center justify-center rounded border border-amber-600 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600"
+              className="inline-flex min-h-11 items-center justify-center rounded border border-amber-700 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
             >
               Call Us
             </a>

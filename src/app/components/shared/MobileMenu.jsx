@@ -64,7 +64,7 @@ export default function MobileMenu({ tone = "light" }) {
   const menuButtonClass =
     tone === "light"
       ? "text-white hover:text-gray-200 focus:ring-white"
-      : "text-gray-900 hover:text-amber-700 focus:ring-amber-600";
+      : "text-gray-900 hover:text-amber-700 focus:ring-amber-700";
 
   return (
     <>

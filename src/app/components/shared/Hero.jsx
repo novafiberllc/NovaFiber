@@ -1,13 +1,12 @@
-import SiteHeader from "@/app/components/shared/SiteHeader";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
 
 const buttonStyles = {
   primary:
-    "min-h-11 items-center justify-center rounded bg-amber-600 px-4 py-3 text-center font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-600",
+    "min-h-11 items-center justify-center rounded bg-amber-700 px-4 py-3 text-center font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white",
   secondary:
     "min-h-11 items-center justify-center rounded border border-white bg-white px-4 py-3 text-center font-bold text-gray-900 hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white",
-  home: "min-h-11 items-center rounded bg-amber-600 px-8 py-4 text-xl font-bold text-white hover:bg-amber-700 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white",
+  home: "min-h-11 items-center rounded bg-amber-700 px-8 py-4 text-xl font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white",
 };
 
 function ActionLink({ action, variant }) {
@@ -70,6 +69,7 @@ export default function Hero({
   trustItems,
   backgroundImage,
   backgroundPosition = "center",
+  backgroundPositionClassName,
   overlay = "default",
   breadcrumb,
 }) {
@@ -95,9 +95,11 @@ export default function Hero({
 
   const backgroundStyle = {
     backgroundImage: `url(${resolvedBackgroundImage})`,
-    backgroundPosition,
     backgroundSize: "cover",
+    ...(!backgroundPositionClassName && { backgroundPosition }),
   };
+
+  const backgroundClassName = backgroundPositionClassName || "bg-center";
 
   const overlayClass =
     overlay === "service" ? "bg-slate-900/55" : "bg-slate-900/60";
@@ -106,13 +108,15 @@ export default function Hero({
     return (
       <section className="relative w-full overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className={`absolute inset-0 bg-cover ${backgroundClassName}`}
           style={backgroundStyle}
         />
         <div className={`absolute inset-0 ${overlayClass}`} />
         {/* <div className="relative mx-auto flex h-screen w-full max-w-360 flex-col"> */}
-        <div className="relative mx-auto flex w-full max-w-360 flex-col">
-          <SiteHeader variant="hero" />
+        <div
+          data-main-content-start
+          className="relative mx-auto flex w-full max-w-360 flex-col pt-16 md:pt-21"
+        >
           <div className="flex grow flex-col items-start justify-center gap-6 px-5 text-white sm:px-10 md:px-20">
             <h1 className="mb-4 mt-20 md:mt-30 text-center text-4xl font-bold md:text-7xl">
               {content.title}
@@ -137,14 +141,15 @@ export default function Hero({
   return (
     <section className="relative w-full overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className={`absolute inset-0 bg-cover ${backgroundClassName}`}
         style={backgroundStyle}
       />
       <div className={`absolute inset-0 ${overlayClass}`} />
 
-      <div className="relative mx-auto w-full max-w-360">
-        <SiteHeader variant="hero" />
-
+      <div
+        data-main-content-start
+        className="relative mx-auto w-full max-w-360 pt-16 md:pt-21"
+      >
         {breadcrumb && (
           <div className="mt-6 px-5 text-white/90 sm:px-10 md:px-20">
             {breadcrumb}
