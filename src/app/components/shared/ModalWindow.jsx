@@ -44,9 +44,7 @@ export default function ModalWindow({ isOpen, onClose, content }) {
           <h2 id="modal-title" className="text-2xl font-bold text-gray-800">
             {content === "Pricing"
               ? modalContent.Pricing.title
-              : content === "Area"
-                ? modalContent.Area.title
-                : modalContent.Materials.title}
+              : modalContent.Materials.title}
           </h2>
           <button
             onClick={onClose}
@@ -62,19 +60,8 @@ export default function ModalWindow({ isOpen, onClose, content }) {
           <p>
             {content === "Pricing"
               ? modalContent.Pricing.description
-              : content === "Area"
-                ? modalContent.Area.description
-                : modalContent.Materials.description}
+              : modalContent.Materials.description}
           </p>
-          {content === "Area" && (
-            <div className="mt-4">
-              <ul className="list-disc list-inside text-gray-600">
-                {modalContent.Area.locations.sort().map((location, index) => (
-                  <li key={index}>{location}</li>
-                ))}
-              </ul>
-            </div>
-          )}
         </div>
       </div>
 

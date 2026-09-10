@@ -14,7 +14,12 @@ function ActionLink({ action, variant }) {
 
   if (action.type === "responsiveQuote") {
     return (
-      <ResponsiveQuoteLink className={className} message={action.message} />
+      <ResponsiveQuoteLink
+        className={className}
+        message={action.message}
+        label={action.label}
+        ariaLabel={action.ariaLabel}
+      />
     );
   }
 

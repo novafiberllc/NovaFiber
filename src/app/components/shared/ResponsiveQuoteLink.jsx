@@ -1,6 +1,11 @@
 import { businessInfo, contactLinks } from "@/lib/business";
 
-export default function ResponsiveQuoteLink({ className = "", message }) {
+export default function ResponsiveQuoteLink({
+  className = "",
+  message,
+  label = "Send Photos for a Quote",
+  ariaLabel,
+}) {
   const sharedClass = `min-h-11 items-center justify-center ${className}`;
   const encodedMessage = message ? encodeURIComponent(message) : null;
   const smsHref = encodedMessage
@@ -14,19 +19,21 @@ export default function ResponsiveQuoteLink({ className = "", message }) {
     <>
       <a
         href={smsHref}
-        aria-label="Text photos to NovaFiber for a cleaning quote"
+        aria-label={ariaLabel || "Text photos to NovaFiber for a cleaning quote"}
         className={`inline-flex md:hidden ${sharedClass}`}
       >
-        Send Photos for a Quote
+        {label}
       </a>
       <a
         href={whatsappHref}
-        aria-label="Send photos to NovaFiber on WhatsApp for a cleaning quote"
+        aria-label={
+          ariaLabel || "Send photos to NovaFiber on WhatsApp for a cleaning quote"
+        }
         target="_blank"
         rel="noopener noreferrer"
         className={`hidden md:inline-flex ${sharedClass}`}
       >
-        Send Photos for a Quote
+        {label}
       </a>
     </>
   );

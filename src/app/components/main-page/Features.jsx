@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import ModalWindow from "../shared/ModalWindow";
 
@@ -30,20 +31,20 @@ export default function Features() {
             delivering fast and reliable sofa and carpet cleaning right to your
             doorstep. Wherever you are, we’re ready to help.
           </p>
-          <button
-            onClick={() => {
-              setIsModalOpen(true);
-              setModalContent("Area");
-            }}
+          <Link
+            href="/service-area"
+            aria-label="Learn more about NovaFiber service areas"
             className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
             <p>More Info</p>
             <MoveRight
+              aria-hidden="true"
+              focusable="false"
               className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
-          </button>
+          </Link>
         </div>
         <div className="max-w-71 desktop:justify-self-center">
           <p className="text-2xl font-bold mb-5">Flexible Pricing</p>

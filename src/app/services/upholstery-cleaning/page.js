@@ -4,7 +4,7 @@ import ServiceImage from "@/app/components/service-page/ServiceImage";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
-import { modalContent } from "@/lib/constants";
+import { serviceAreas } from "@/lib/service-area";
 import { upholsteryFaqs } from "@/lib/upholstery-cleaning";
 
 const canonicalUrl = `${businessInfo.siteUrl}/services/upholstery-cleaning/`;
@@ -38,7 +38,7 @@ export const metadata = {
   },
 };
 
-const areaServed = modalContent.Area.locations.map((name) => ({
+const areaServed = serviceAreas.map((name) => ({
   "@type": "City",
   name,
 }));
