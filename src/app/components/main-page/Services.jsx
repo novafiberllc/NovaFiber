@@ -6,7 +6,7 @@ import { MoveRight } from "lucide-react";
 import { services } from "@/lib/constants";
 import { contactLinks } from "@/lib/business";
 
-function ServiceCard({ service, index }) {
+export function ServiceCard({ service, index }) {
   const imagePath = path.join(
     process.cwd(),
     "public",

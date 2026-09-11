@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, MoveRight } from "lucide-react";
+import { MapPin } from "lucide-react";
+import { ServiceCard } from "@/app/components/main-page/Services";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
@@ -7,7 +8,7 @@ import { services } from "@/lib/constants";
 import { serviceAreas } from "@/lib/service-area";
 
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY;
-const googleMapsEmbedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=Bolingbrook%2C+IL&zoom=9&maptype=roadmap`;
+const googleMapsEmbedUrl = `https://www.google.com/maps/d/u/0/embed?mid=1yMAKILL6DTD_LZrhukDOtsxS9gwIDjA&ehbc=2E312F&noprof=1`;
 const canonicalUrl = `${businessInfo.siteUrl}/service-area/`;
 const metadataTitle =
   "Service Area in Bolingbrook & Chicago Suburbs | NovaFiber";
@@ -110,6 +111,18 @@ const surroundingLocations = serviceAreas
   .filter((location) => location !== homeLocation)
   .sort((a, b) => a.localeCompare(b));
 
+const getGoogleMapsLocation = (location) => {
+  const city = location.replace(/,\s*IL$/i, "");
+
+  return {
+    city,
+    url: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+      `${city}, Illinois, USA`,
+    )}`,
+  };
+};
+const homeGoogleMapsLocation = getGoogleMapsLocation(homeLocation);
+
 const overviewFacts = [
   "Based in Bolingbrook, Illinois",
   "Serving confirmed surrounding Chicago suburbs",
@@ -199,7 +212,7 @@ export default function ServiceAreaPage() {
       <section className="w-full max-w-360 bg-white px-5 py-10 sm:px-10 md:px-20 desktop:py-20">
         <div className="mx-auto grid max-w-8xl items-center gap-10 md:grid-cols-2">
           <div>
-            <div className="h-80 w-full overflow-hidden rounded-xl sm:h-95 md:h-110 desktop:h-100">
+            <div className="h-80 w-full overflow-hidden rounded-xl sm:h-95 md:h-110 desktop:h-110">
               <iframe
                 src={googleMapsEmbedUrl}
                 title="NovaFiber service area around Bolingbrook and Chicago suburbs"
@@ -266,37 +279,54 @@ export default function ServiceAreaPage() {
           </div>
 
           <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3 desktop:grid-cols-4">
-            <li className="rounded-4xl border border-amber-700 bg-white px-5 py-5 shadow-sm sm:col-span-2 md:col-span-3 desktop:col-span-4">
-              <div className="flex items-center gap-3">
-                <MapPin
-                  aria-hidden="true"
-                  focusable="false"
-                  className="shrink-0 text-amber-700"
-                />
-                <div>
-                  <span className="block text-xs font-bold tracking-widest text-amber-700">
-                    HOME LOCATION
-                  </span>
-                  <span className="mt-1 block text-xl font-bold">
-                    {homeLocation}
-                  </span>
-                </div>
-              </div>
-            </li>
-            {surroundingLocations.map((location) => (
-              <li
-                key={location}
-                className="flex min-h-14 items-center gap-3 rounded-4xl border border-gray-200 bg-white px-5 py-4 shadow-sm"
+            <li className="sm:col-span-2 md:col-span-3 desktop:col-span-4">
+              <a
+                href={homeGoogleMapsLocation.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View ${homeGoogleMapsLocation.city}, Illinois on Google Maps — opens in a new tab`}
+                className="group flex min-h-14 items-center gap-3 rounded-4xl border border-amber-700 bg-white px-5 py-5 shadow-sm motion-safe:transition-[border-color,box-shadow,transform] motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 hover:border-amber-800 hover:shadow-md motion-safe:active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
               >
                 <MapPin
                   aria-hidden="true"
                   focusable="false"
-                  size={18}
-                  className="shrink-0 text-amber-700"
+                  className="shrink-0 text-amber-700 group-hover:text-amber-800"
                 />
-                <span className="font-medium">{location}</span>
-              </li>
-            ))}
+                <div className="min-w-0">
+                  <span className="block text-xs font-bold tracking-widest text-amber-700">
+                    HOME LOCATION
+                  </span>
+                  <span className="mt-1 block break-words text-xl font-bold">
+                    {homeLocation}
+                  </span>
+                </div>
+              </a>
+            </li>
+            {surroundingLocations.map((location) => {
+              const googleMapsLocation = getGoogleMapsLocation(location);
+
+              return (
+                <li key={location}>
+                  <a
+                    href={googleMapsLocation.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${googleMapsLocation.city}, Illinois on Google Maps — opens in a new tab`}
+                    className="group flex h-full min-h-14 items-center gap-3 rounded-4xl border border-gray-200 bg-white px-5 py-4 shadow-sm motion-safe:transition-[border-color,box-shadow,transform] motion-safe:duration-200 motion-safe:hover:-translate-y-0.5 hover:border-amber-700 hover:shadow-md motion-safe:active:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+                  >
+                    <MapPin
+                      aria-hidden="true"
+                      focusable="false"
+                      size={18}
+                      className="shrink-0 text-amber-700 group-hover:text-amber-800"
+                    />
+                    <span className="min-w-0 break-words font-medium group-hover:text-amber-800">
+                      {location}
+                    </span>
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-gray-600">
@@ -317,31 +347,15 @@ export default function ServiceAreaPage() {
             </h2>
           </div>
 
-          <ul className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 desktop:grid-cols-3">
-            {services.map((service) => (
-              <li key={service.title} className="h-full">
-                <Link
-                  href={service.href}
-                  aria-label={`Learn more about ${service.title}`}
-                  className="group flex h-full flex-col rounded-4xl border border-gray-200 bg-[#F7F7F7] px-6 py-6 shadow-sm motion-safe:transition-shadow motion-safe:duration-200 hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
-                >
-                  <h3 className="text-2xl font-bold">{service.title}</h3>
-                  <p className="mt-3 leading-relaxed text-gray-600">
-                    {service.description}
-                  </p>
-                  <span className="mt-auto flex items-center gap-3 pt-5 font-medium text-amber-700 group-hover:text-amber-800">
-                    Learn more
-                    <MoveRight
-                      aria-hidden="true"
-                      focusable="false"
-                      strokeWidth={0.5}
-                      size={36}
-                    />
-                  </span>
-                </Link>
-              </li>
+          <div className="mt-10 grid w-full grid-cols-1 gap-7 md:grid-cols-4 desktop:grid-cols-6">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={service.title}
+                service={service}
+                index={index}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
