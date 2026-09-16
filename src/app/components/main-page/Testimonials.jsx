@@ -21,7 +21,7 @@ export default function Testimonials() {
         What Our Customers Say
       </p>
 
-      <div className="max-w-90 sm:max-w-149 md:max-w-218.5 desktop:max-w-360 flex flex-col items-center">
+      <div className="w-full max-w-90 sm:max-w-149 md:max-w-218.5 desktop:max-w-360 flex flex-col items-center">
         <Slider slides={testimonials} CardComponent={ReviewCard} />
       </div>
 

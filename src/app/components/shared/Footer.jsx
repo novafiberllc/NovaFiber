@@ -2,22 +2,16 @@
 
 import Image from "next/image";
 import { businessInfo, contactLinks } from "@/lib/business";
+import ServiceAreaMapEmbed from "./ServiceAreaMapEmbed";
 
 export default function Footer() {
   return (
     <footer className="max-w-360 w-full flex flex-col items-center justify-center overflow-hidden">
       <div className="w-full min-h-115.5 py-5 sm:py-10 px-5 sm:px-10 md:px-20 bg-[#F7F7F7] flex flex-col items-center justify-center">
-        <div className="w-full h-full grow grid grid-cols-1 md:grid-cols-2 gap-20 items-center justify-center">
+        <div className="w-full h-full grow grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center">
           {/* Google map */}
-          <div className="relative w-75 sm:w-112.5 h-75 sm:h-112.5  rounded-full overflow-hidden justify-self-center">
-            <Image
-              src={"/image/google_map.jpg"}
-              alt="Map"
-              fill={true}
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-contain"
-              loading="eager"
-            />
+          <div className="aspect-4/3 w-full h-full overflow-hidden rounded-xl justify-self-center">
+            <ServiceAreaMapEmbed title="NovaFiber service area map" />
           </div>
 
           <div

@@ -18,8 +18,7 @@ const testimonials = [
     quote:
       "Denys was great! He responded quickly to my request for a quote, was on time for our appointment & my furniture looks fabulous!",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-c-lalonde.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjWElcMi_Mw5z8RG9TFsZYmDMDxOSXwLIR-XPrkP7Rx9TTKHF0u6eQ=w400-h400-p-rp-mo-br100",
     reviewUrl: "https://maps.app.goo.gl/ZHSXAmgXuHmhWPi89",
@@ -31,8 +30,7 @@ const testimonials = [
     quote:
       "Denys was absolutely wonderful! He cleaned both our area rug and our couch, and they look amazing. He was incredibly thorough and professional.",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-lauren-wood.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjWhuTkGa36wK5s_FNXG18up82NaKxg5-tvwTFoZaJVxtNVj9riRcw=w400-h400-p-rp-mo-br100",
     reviewUrl: "https://maps.app.goo.gl/wuiScj8QEgx5vVd28",
@@ -43,8 +41,7 @@ const testimonials = [
     dateLabel: "1 month ago",
     quote: "Very professional and efficient. I would highly recommend them.",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-donna-ruge.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjUGoGoa68gXoTDmtWgt18OD-byaVyTr1BCA0DcVAhoXLETNFcs=w400-h400-p-rp-mo-br100",
     reviewUrl: "https://maps.app.goo.gl/13N5goYvWCjKJbm19",
@@ -56,8 +53,7 @@ const testimonials = [
     quote:
       "I couldn’t be happier with how my carpet turned out! It looks and feels brand new. The technician was professional and on time.",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-victoria-sparkman.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjVtUDjLEMT4TD2sAUBRZkwKopMqNNl9j0OH1x2xfmV46ixkyxeX=w400-h400-p-rp-mo-br100",
     reviewUrl: "https://maps.app.goo.gl/gUoU3ZEVhsk2FhoaA",
@@ -69,8 +65,7 @@ const testimonials = [
     quote:
       "Arrived on time and was very professional. Excellent job on the sofa cleaning!",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-ramon-harvey.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjWmeTLvbbBV5_XPWeSEh6N7hBQLRo5B2_y4cHOvdy4J_1gZmPLBrw=w400-h400-p-rp-mo-br100",
     reviewUrl: "https://maps.app.goo.gl/uE8sCEi58SFEMcMf7",
@@ -82,8 +77,7 @@ const testimonials = [
     quote:
       "Denys thank you so much for coming through and making my Couch n Sofa look brand new again! The price was affordable.",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-fdub-callaway.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjUzsJbvaNfOwj_Bq6qHsPwGRceiySt-MTWjFl2fsu3lp80YYsdd=w400-h400-p-rp-mo-br100",
     reviewUrl: "https://maps.app.goo.gl/kcoggbDDFNu7xZcD6",
@@ -95,8 +89,7 @@ const testimonials = [
     quote:
       "Had my couch and mattress cleaned and the results were amazing. Everything looks fresh and like new again. Great service and very fair pricing.",
     rating: 5,
-    bgImage:
-      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
+    bgImage: "/image/reviews/backgrounds/review-bg-andrii-tiahnii.jpg",
     avatar:
       "https://lh3.googleusercontent.com/a-/ALV-UjUFnZm35VkZTwpEM8QJ9oGSg4aLWH8D8fHYBgvkmOd4lu_RlUxn=w400-h400-p-rp-mo-ba12-br100",
     reviewUrl: "https://maps.app.goo.gl/Xa2XVBPzVASyH49q6",

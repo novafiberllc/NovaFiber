@@ -3,12 +3,12 @@ import { MapPin } from "lucide-react";
 import { ServiceCard } from "@/app/components/main-page/Services";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
+import ServiceAreaMapEmbed from "@/app/components/shared/ServiceAreaMapEmbed";
 import { businessInfo, contactLinks } from "@/lib/business";
 import { services } from "@/lib/constants";
 import { serviceAreas } from "@/lib/service-area";
 
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY;
-const googleMapsEmbedUrl = `https://www.google.com/maps/d/u/0/embed?mid=1yMAKILL6DTD_LZrhukDOtsxS9gwIDjA&ehbc=2E312F&noprof=1`;
 const canonicalUrl = `${businessInfo.siteUrl}/service-area/`;
 const metadataTitle =
   "Service Area in Bolingbrook & Chicago Suburbs | NovaFiber";
@@ -213,15 +213,8 @@ export default function ServiceAreaPage() {
         <div className="mx-auto grid max-w-8xl items-center gap-10 md:grid-cols-2">
           <div>
             <div className="h-80 w-full overflow-hidden rounded-xl sm:h-95 md:h-110 desktop:h-110">
-              <iframe
-                src={googleMapsEmbedUrl}
+              <ServiceAreaMapEmbed
                 title="NovaFiber service area around Bolingbrook and Chicago suburbs"
-                width="100%"
-                height="100%"
-                loading="lazy"
-                allowFullScreen
-                referrerPolicy="strict-origin-when-cross-origin"
-                style={{ border: 0 }}
               />
             </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-600">

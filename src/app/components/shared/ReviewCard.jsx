@@ -21,11 +21,12 @@ export default function ReviewCard({ item }) {
         {/* Background image */}
         <Image
           src={item.bgImage}
-          alt="Interior"
-          fill={true}
-          sizes="(max-width: 768px) 100vw, 60vw"
-          className="absolute inset-0 w-full h-full object-cover"
-          loading="eager"
+          alt=""
+          aria-hidden="true"
+          width={370}
+          height={520}
+          sizes="(max-width: 639px) 100vw, 370px"
+          className="absolute inset-0 h-full w-full object-cover object-center"
         />
 
         {/* Gradient */}
