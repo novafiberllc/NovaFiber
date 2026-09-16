@@ -13,74 +13,93 @@ const menuItems = [
 const testimonials = [
   {
     id: 1,
-    name: "Bang Upin",
-    role: "Pedagang Asongan",
+    name: "C LaLonde",
+    dateLabel: "3 days ago",
     quote:
-      "Terimakasih banyak, kini ruanganku menjadi lebih mewah dan terlihat mahal",
-    rating: 4,
+      "Denys was great! He responded quickly to my request for a quote, was on time for our appointment & my furniture looks fabulous!",
+    rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
     avatar:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjWElcMi_Mw5z8RG9TFsZYmDMDxOSXwLIR-XPrkP7Rx9TTKHF0u6eQ=w400-h400-p-rp-mo-br100",
+    reviewUrl: "https://maps.app.goo.gl/ZHSXAmgXuHmhWPi89",
   },
   {
     id: 2,
-    name: "Ibuk Sukijan",
-    role: "Ibu Rumah Tangga",
+    name: "Lauren Wood",
+    dateLabel: "1 month ago",
     quote:
-      "Makasih Panto, aku sekarang berasa tinggal di apartment karena barang-barang yang terlihat mewah",
+      "Denys was absolutely wonderful! He cleaned both our area rug and our couch, and they look amazing. He was incredibly thorough and professional.",
     rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=800&auto=format&fit=crop",
     avatar:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjWhuTkGa36wK5s_FNXG18up82NaKxg5-tvwTFoZaJVxtNVj9riRcw=w400-h400-p-rp-mo-br100",
+    reviewUrl: "https://maps.app.goo.gl/wuiScj8QEgx5vVd28",
   },
   {
     id: 3,
-    name: "Pak Budi",
-    role: "Pengusaha",
-    quote: "Desain interior yang sangat memuaskan dan elegan.",
-    rating: 4,
+    name: "Donna Ruge",
+    dateLabel: "1 month ago",
+    quote: "Very professional and efficient. I would highly recommend them.",
+    rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop",
     avatar:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=200&auto=format&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjUGoGoa68gXoTDmtWgt18OD-byaVyTr1BCA0DcVAhoXLETNFcs=w400-h400-p-rp-mo-br100",
+    reviewUrl: "https://maps.app.goo.gl/13N5goYvWCjKJbm19",
   },
   {
     id: 4,
-    name: "Mas Dimas",
-    role: "Freelance Designer",
+    name: "Victoria Sparkman",
+    dateLabel: "2 months ago",
     quote:
-      "Semenjak pakai furniture dari Panto, ruang kerjaku jadi super estetik. Kalau lagi Zoom meeting, background-nya udah kayak studio profesional!",
+      "I couldn’t be happier with how my carpet turned out! It looks and feels brand new. The technician was professional and on time.",
     rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop",
     avatar:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjVtUDjLEMT4TD2sAUBRZkwKopMqNNl9j0OH1x2xfmV46ixkyxeX=w400-h400-p-rp-mo-br100",
+    reviewUrl: "https://maps.app.goo.gl/gUoU3ZEVhsk2FhoaA",
   },
   {
     id: 5,
-    name: "Mbak Ayu",
-    role: "Pengantin Baru",
+    name: "Ramon Harvey",
+    dateLabel: "2 months ago",
     quote:
-      "Pas banget buat ngisi rumah baru kami. Harganya bersahabat, tapi kualitas kayunya kokoh banget. Suami juga suka sama desain minimalisnya.",
+      "Arrived on time and was very professional. Excellent job on the sofa cleaning!",
     rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop",
     avatar:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjWmeTLvbbBV5_XPWeSEh6N7hBQLRo5B2_y4cHOvdy4J_1gZmPLBrw=w400-h400-p-rp-mo-br100",
+    reviewUrl: "https://maps.app.goo.gl/uE8sCEi58SFEMcMf7",
   },
   {
     id: 6,
-    name: "Kang Gilang",
-    role: "Anak Kost",
+    name: "fdub callaway",
+    dateLabel: "2 months ago",
     quote:
-      "Gak nyangka kamar kost-an yang sempit bisa disulap jadi se-cozy ini berkat Panto. Bahannya bagus dan perakitannya gampang banget.",
-    rating: 4,
+      "Denys thank you so much for coming through and making my Couch n Sofa look brand new again! The price was affordable.",
+    rating: 5,
     bgImage:
       "https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800&auto=format&fit=crop",
     avatar:
-      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=200&auto=format&fit=crop",
+      "https://lh3.googleusercontent.com/a-/ALV-UjUzsJbvaNfOwj_Bq6qHsPwGRceiySt-MTWjFl2fsu3lp80YYsdd=w400-h400-p-rp-mo-br100",
+    reviewUrl: "https://maps.app.goo.gl/kcoggbDDFNu7xZcD6",
+  },
+  {
+    id: 7,
+    name: "Andrii Tiahnii",
+    dateLabel: "4 months ago",
+    quote:
+      "Had my couch and mattress cleaned and the results were amazing. Everything looks fresh and like new again. Great service and very fair pricing.",
+    rating: 5,
+    bgImage:
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=800&auto=format&fit=crop",
+    avatar:
+      "https://lh3.googleusercontent.com/a-/ALV-UjUFnZm35VkZTwpEM8QJ9oGSg4aLWH8D8fHYBgvkmOd4lu_RlUxn=w400-h400-p-rp-mo-ba12-br100",
+    reviewUrl: "https://maps.app.goo.gl/Xa2XVBPzVASyH49q6",
   },
 ];
 

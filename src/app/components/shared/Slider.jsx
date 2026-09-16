@@ -51,8 +51,9 @@ export default function Slider({ slides, CardComponent }) {
 
       {/* Back Button */}
       <button
-        aria-label="Previous result"
-        className="flex swiper-button-prev-custom absolute -left-[5%] sm:left-[1%] md:-left-[1%] desktop:left-[1%] top-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:bg-gray-50 transition-colors z-20 cursor-pointer aria-"
+        type="button"
+        aria-label="Previous review"
+        className="swiper-button-prev-custom absolute -left-[5%] top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.1)] motion-safe:transition-colors hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700 sm:left-[1%] md:-left-[1%] desktop:left-[1%]"
       >
         <svg
           className="w-6 h-6 text-black"
@@ -71,8 +72,9 @@ export default function Slider({ slides, CardComponent }) {
 
       {/* Forward Button */}
       <button
-        aria-label="Next result"
-        className="flex swiper-button-next-custom absolute -right-[5%]  sm:right-[1%] md:-right-[1%] desktop:right-[1%]  top-1/2 -translate-y-1/2 w-14 h-14 bg-white rounded-full items-center justify-center shadow-[0_8px_30px_rgb(0,0,0,0.1)] hover:bg-gray-50 transition-colors z-20 cursor-pointer"
+        type="button"
+        aria-label="Next review"
+        className="swiper-button-next-custom absolute -right-[5%] top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.1)] motion-safe:transition-colors hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700 sm:right-[1%] md:-right-[1%] desktop:right-[1%]"
       >
         <svg
           className="w-6 h-6 text-black"
