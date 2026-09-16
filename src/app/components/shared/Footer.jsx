@@ -18,7 +18,7 @@ export default function Footer() {
             id="contacts"
             className="h-full flex flex-col items-center justify-between gap-10 "
           >
-            <div className="md:pt-10 sm:pr-10 flex flex-row items-start justify-center gap-10 sm:gap-40 ">
+            <div className="flex flex-row w-full items-center justify-center md:justify-between sm:px-5 desktop:px-10 gap-10 sm:gap-20">
               {/* Contacts */}
               <div className="min-h-fit flex flex-col gap-4">
                 <p className="mb-2 text-amber-600 text-xl">Contacts</p>
@@ -75,7 +75,7 @@ export default function Footer() {
               </div>
 
               {/* Social media links */}
-              <div className="min-h-fit flex flex-col gap-4 mb-10">
+              <div className="min-h-fit flex flex-col gap-2">
                 <p className="mb-2 text-amber-600 text-xl">Follow Us</p>
                 {/* Facebook */}
                 <a
@@ -140,7 +140,7 @@ export default function Footer() {
                 </a>
               </div>
             </div>
-            <div className="w-full flex flex-col items-center justify-between gap-5">
+            <div className="w-full flex flex-col items-center justify-between gap-2">
               <a
                 href="https://sites.google.com/view/novafiberllcprivacypolicy/privacy-policy"
                 target="_blank"
