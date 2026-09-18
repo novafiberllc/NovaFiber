@@ -12,7 +12,7 @@ const googleBusinessProfileUrl =
 export default function Testimonials() {
   return (
     <section
-      id="testimonials"
+      id="reviews"
       className="max-w-360 w-full py-15  flex flex-col items-center justify-center overflow-hidden"
     >
       <h2 className="text-4xl font-bold  max-w-103">Our Client Reviews</h2>

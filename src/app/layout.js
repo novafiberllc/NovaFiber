@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "./components/shared/Footer";
 import SiteHeader from "./components/shared/SiteHeader";
 import SkipLink from "./components/shared/SkipLink";
+import BackToTopButton from "./components/shared/BackToTopButton";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -19,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${roboto.variable} h-full antialiased`}>
       <body className="flex w-full flex-col items-center">
         <SkipLink />
-        <div className="absolute top-0 z-20 w-full">
+        <div className="absolute top-0 z-40 w-full">
           <SiteHeader variant="hero" />
         </div>
         <main
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   );

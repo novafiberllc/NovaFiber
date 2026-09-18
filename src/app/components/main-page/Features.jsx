@@ -7,7 +7,6 @@ import ModalWindow from "../shared/ModalWindow";
 
 export default function Features() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
 
   return (
     <>
@@ -53,20 +52,20 @@ export default function Features() {
             provide quick, accurate estimates and personalized solutions—so you
             always know what to expect, with no surprises.
           </p>
-          <button
-            onClick={() => {
-              setIsModalOpen(true);
-              setModalContent("Pricing");
-            }}
+          <Link
+            href="#pricing"
+            aria-label="View NovaFiber pricing"
             className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
             <p>More Info</p>
             <MoveRight
+              aria-hidden="true"
+              focusable="false"
               className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
-          </button>
+          </Link>
         </div>
         <div className="max-w-71 justify-self-center">
           <p className="text-2xl font-bold mb-5">Professional Materials</p>
@@ -76,10 +75,7 @@ export default function Features() {
             long-lasting results.
           </p>
           <button
-            onClick={() => {
-              setIsModalOpen(true);
-              setModalContent("Materials");
-            }}
+            onClick={() => setIsModalOpen(true)}
             className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
             <p>More Info</p>
@@ -94,7 +90,6 @@ export default function Features() {
       <ModalWindow
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        content={modalContent}
       />
     </>
   );

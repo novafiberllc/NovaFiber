@@ -1,3 +1,4 @@
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { contactLinks } from "@/lib/business";
 
@@ -134,8 +135,10 @@ export default function Pricing() {
             <ResponsiveQuoteLink className="rounded bg-amber-700 px-4 py-3 text-center font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700" />
             <a
               href={contactLinks.telephone}
-              className="inline-flex min-h-11 items-center justify-center rounded border border-amber-700 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+              aria-label="Call NovaFiber"
+              className="inline-flex min-h-11 items-center justify-center gap-2 rounded border border-amber-700 px-4 py-3 text-center font-bold text-amber-700 hover:bg-amber-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
             >
+              <ActionIcon actionType="phone" />
               Call Us
             </a>
           </div>

@@ -64,11 +64,6 @@ export default function ReviewCard({ item }) {
 
           {/* Text */}
           <h3 className="text-[#1E1E1E] font-bold text-lg">{item.name}</h3>
-          <p className="mt-1 text-xs text-[#8E8E8E]">
-            Google Review
-            <span aria-hidden="true"> · </span>
-            {item.dateLabel}
-          </p>
           <p className="mt-4 line-clamp-3 text-[14px] font-medium leading-relaxed text-[#1E1E1E]">
             {item.quote}
           </p>

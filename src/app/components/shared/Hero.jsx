@@ -1,3 +1,4 @@
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
 
@@ -19,6 +20,7 @@ function ActionLink({ action, variant }) {
         message={action.message}
         label={action.label}
         ariaLabel={action.ariaLabel}
+        actionType={action.actionType}
       />
     );
   }
@@ -29,8 +31,9 @@ function ActionLink({ action, variant }) {
       aria-label={action.ariaLabel}
       target={action.target}
       rel={action.target === "_blank" ? "noopener noreferrer" : undefined}
-      className={`inline-flex ${className}`}
+      className={`inline-flex gap-2 ${className}`}
     >
+      <ActionIcon actionType={action.actionType} />
       {action.label}
     </a>
   );
@@ -50,6 +53,8 @@ const homeHero = {
   primaryAction: {
     label: "Text Us",
     href: contactLinks.sms,
+    actionType: "sms",
+    ariaLabel: "Text NovaFiber via SMS",
   },
   backgroundImage: "/image/hero1.jpg",
 };

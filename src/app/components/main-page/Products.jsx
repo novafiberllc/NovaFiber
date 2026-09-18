@@ -7,7 +7,7 @@ import CompareSlider from "../shared/CompareSlider";
 export default function Products() {
   return (
     <section
-      id="products"
+      id="before-after"
       className="max-w-360 w-full py-15 flex flex-col items-center justify-center overflow-hidden"
     >
       <h2 className="text-3xl sm:text-4xl font-bold text-center">

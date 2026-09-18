@@ -1,20 +1,42 @@
-import { businessInfo } from "@/lib/business";
-
 const menuItems = [
-  { href: "/#features", label: "Features" },
-  { href: "/#services", label: "Services" },
-  { href: "/#products", label: "Products" },
+  {
+    href: "/#services",
+    label: "Services",
+    children: [
+      {
+        href: "/services/couch-sofa-cleaning",
+        label: "Couch & Sofa Cleaning",
+      },
+      {
+        href: "/services/upholstery-cleaning",
+        label: "Upholstery Cleaning",
+      },
+      {
+        href: "/services/mattress-cleaning",
+        label: "Mattress Cleaning",
+      },
+      {
+        href: "/services/carpet-cleaning",
+        label: "Carpet Cleaning",
+      },
+      {
+        href: "/services/pet-stain-odor-removal",
+        label: "Pet Stain & Odor Removal",
+      },
+    ],
+  },
+  { href: "/#before-after", label: "Products" },
   { href: "/#pricing", label: "Pricing" },
-  { href: "/#testimonials", label: "Customer Reviews" },
+  { href: "/service-area", label: "Area" },
+  { href: "/#reviews", label: "Reviews" },
+  { href: "/#faq", label: "FAQ" },
   { href: "/#contacts", label: "Contacts" },
-  { href: "#top", label: "Back to top", isBackToTop: true },
 ];
 
 const testimonials = [
   {
     id: 1,
     name: "C LaLonde",
-    dateLabel: "3 days ago",
     quote:
       "Denys was great! He responded quickly to my request for a quote, was on time for our appointment & my furniture looks fabulous!",
     rating: 5,
@@ -26,7 +48,6 @@ const testimonials = [
   {
     id: 2,
     name: "Lauren Wood",
-    dateLabel: "1 month ago",
     quote:
       "Denys was absolutely wonderful! He cleaned both our area rug and our couch, and they look amazing. He was incredibly thorough and professional.",
     rating: 5,
@@ -38,7 +59,6 @@ const testimonials = [
   {
     id: 3,
     name: "Donna Ruge",
-    dateLabel: "1 month ago",
     quote: "Very professional and efficient. I would highly recommend them.",
     rating: 5,
     bgImage: "/image/reviews/backgrounds/review-bg-donna-ruge.jpg",
@@ -49,7 +69,6 @@ const testimonials = [
   {
     id: 4,
     name: "Victoria Sparkman",
-    dateLabel: "2 months ago",
     quote:
       "I couldn’t be happier with how my carpet turned out! It looks and feels brand new. The technician was professional and on time.",
     rating: 5,
@@ -61,7 +80,6 @@ const testimonials = [
   {
     id: 5,
     name: "Ramon Harvey",
-    dateLabel: "2 months ago",
     quote:
       "Arrived on time and was very professional. Excellent job on the sofa cleaning!",
     rating: 5,
@@ -73,7 +91,6 @@ const testimonials = [
   {
     id: 6,
     name: "fdub callaway",
-    dateLabel: "2 months ago",
     quote:
       "Denys thank you so much for coming through and making my Couch n Sofa look brand new again! The price was affordable.",
     rating: 5,
@@ -85,7 +102,6 @@ const testimonials = [
   {
     id: 7,
     name: "Andrii Tiahnii",
-    dateLabel: "4 months ago",
     quote:
       "Had my couch and mattress cleaned and the results were amazing. Everything looks fresh and like new again. Great service and very fair pricing.",
     rating: 5,
@@ -192,10 +208,6 @@ const services = [
 ];
 
 const modalContent = {
-  Pricing: {
-    title: "Pricing",
-    description: `Every job is different, so pricing depends on the type of cleaning, item size, condition, and number of pieces. We offer bundle discounts for multiple items. For a fast and accurate quote, text ${businessInfo.phoneDisplay} with a brief description or photos — we’ll get back to you quickly with pricing and availability.`,
-  },
   Materials: {
     title: "Professional Materials",
     description:

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
 import { ServiceCard } from "@/app/components/main-page/Services";
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import ServiceAreaMapEmbed from "@/app/components/shared/ServiceAreaMapEmbed";
@@ -173,6 +174,7 @@ export default function ServiceAreaPage() {
             label: "Check Your Location",
             ariaLabel: "Check whether NovaFiber serves your location",
             message: locationCheckMessage,
+            actionType: "whatsapp",
           }}
           secondaryAction={{
             label: "View Service Areas",
@@ -213,9 +215,7 @@ export default function ServiceAreaPage() {
         <div className="mx-auto grid max-w-8xl items-center gap-10 md:grid-cols-2">
           <div>
             <div className="h-80 w-full overflow-hidden rounded-xl sm:h-95 md:h-110 desktop:h-110">
-              <ServiceAreaMapEmbed
-                title="NovaFiber service area around Bolingbrook and Chicago suburbs"
-              />
+              <ServiceAreaMapEmbed title="NovaFiber service area around Bolingbrook and Chicago suburbs" />
             </div>
             <p className="mt-3 text-sm leading-relaxed text-gray-600">
               This interactive map provides a general overview. Confirmed
@@ -370,8 +370,14 @@ export default function ServiceAreaPage() {
               message={locationCheckMessage}
               label="Check Your Location"
               ariaLabel="Check whether NovaFiber serves your location"
+              actionType="whatsapp"
             />
-            <a href={contactLinks.telephone} className={secondaryButton}>
+            <a
+              href={contactLinks.telephone}
+              aria-label="Call NovaFiber"
+              className={`${secondaryButton} gap-2`}
+            >
+              <ActionIcon actionType="phone" />
               Call Us
             </a>
           </div>

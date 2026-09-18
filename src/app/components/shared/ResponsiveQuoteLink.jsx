@@ -1,3 +1,4 @@
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import { businessInfo, contactLinks } from "@/lib/business";
 
 export default function ResponsiveQuoteLink({
@@ -5,8 +6,9 @@ export default function ResponsiveQuoteLink({
   message,
   label = "Send Photos for a Quote",
   ariaLabel,
+  actionType,
 }) {
-  const sharedClass = `min-h-11 items-center justify-center ${className}`;
+  const sharedClass = `min-h-11 items-center justify-center gap-2 ${className}`;
   const encodedMessage = message ? encodeURIComponent(message) : null;
   const smsHref = encodedMessage
     ? `sms:${businessInfo.phone}?body=${encodedMessage}`
@@ -22,6 +24,7 @@ export default function ResponsiveQuoteLink({
         aria-label={ariaLabel || "Text photos to NovaFiber for a cleaning quote"}
         className={`inline-flex md:hidden ${sharedClass}`}
       >
+        <ActionIcon actionType={actionType || "sms"} />
         {label}
       </a>
       <a
@@ -33,6 +36,7 @@ export default function ResponsiveQuoteLink({
         rel="noopener noreferrer"
         className={`hidden md:inline-flex ${sharedClass}`}
       >
+        <ActionIcon actionType={actionType || "whatsapp"} />
         {label}
       </a>
     </>

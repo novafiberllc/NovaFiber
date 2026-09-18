@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ServiceFAQ from "@/app/components/service-page/ServiceFAQ";
 import ServiceImage from "@/app/components/service-page/ServiceImage";
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
@@ -200,7 +201,12 @@ export default function CarpetCleaningPage() {
             type: "responsiveQuote",
             message: carpetQuoteMessage,
           }}
-          secondaryAction={{ label: "Call Us", href: contactLinks.telephone }}
+          secondaryAction={{
+            label: "Call Us",
+            href: contactLinks.telephone,
+            actionType: "phone",
+            ariaLabel: "Call NovaFiber",
+          }}
           backgroundImage="/image/services/carpet-cleaning.jpg"
           backgroundPositionClassName="bg-left md:bg-center"
           overlay="service"
@@ -429,7 +435,12 @@ export default function CarpetCleaningPage() {
               className={primaryButton}
               message={carpetQuoteMessage}
             />
-            <a href={contactLinks.telephone} className={secondaryButton}>
+            <a
+              href={contactLinks.telephone}
+              aria-label="Call NovaFiber"
+              className={`${secondaryButton} gap-2`}
+            >
+              <ActionIcon actionType="phone" />
               Call Us
             </a>
           </div>

@@ -4,7 +4,7 @@ import { X } from "lucide-react";
 import { useEffect } from "react";
 import { modalContent } from "@/lib/constants";
 
-export default function ModalWindow({ isOpen, onClose, content }) {
+export default function ModalWindow({ isOpen, onClose }) {
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (isOpen) {
@@ -42,9 +42,7 @@ export default function ModalWindow({ isOpen, onClose, content }) {
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
           <h2 id="modal-title" className="text-2xl font-bold text-gray-800">
-            {content === "Pricing"
-              ? modalContent.Pricing.title
-              : modalContent.Materials.title}
+            {modalContent.Materials.title}
           </h2>
           <button
             onClick={onClose}
@@ -57,11 +55,7 @@ export default function ModalWindow({ isOpen, onClose, content }) {
 
         {/* Content */}
         <div className="px-6 py-8">
-          <p>
-            {content === "Pricing"
-              ? modalContent.Pricing.description
-              : modalContent.Materials.description}
-          </p>
+          <p>{modalContent.Materials.description}</p>
         </div>
       </div>
 

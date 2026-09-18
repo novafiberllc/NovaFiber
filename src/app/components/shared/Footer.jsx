@@ -6,7 +6,10 @@ import ServiceAreaMapEmbed from "./ServiceAreaMapEmbed";
 
 export default function Footer() {
   return (
-    <footer className="max-w-360 w-full flex flex-col items-center justify-center overflow-hidden">
+    <footer
+      id="contacts"
+      className="max-w-360 w-full flex flex-col items-center justify-center overflow-hidden"
+    >
       <div className="w-full min-h-115.5 py-5 sm:py-10 px-5 sm:px-10 md:px-20 bg-[#F7F7F7] flex flex-col items-center justify-center">
         <div className="w-full h-full grow grid grid-cols-1 md:grid-cols-2 gap-10 items-center justify-center">
           {/* Google map */}
@@ -14,10 +17,7 @@ export default function Footer() {
             <ServiceAreaMapEmbed title="NovaFiber service area map" />
           </div>
 
-          <div
-            id="contacts"
-            className="h-full flex flex-col items-center justify-between gap-10 "
-          >
+          <div className="h-full flex flex-col items-center justify-between gap-10 ">
             <div className="flex flex-row w-full items-center justify-center md:justify-between sm:px-5 desktop:px-10 gap-10 sm:gap-20">
               {/* Contacts */}
               <div className="min-h-fit flex flex-col gap-4">

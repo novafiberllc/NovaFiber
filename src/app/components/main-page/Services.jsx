@@ -3,6 +3,7 @@ import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import { services } from "@/lib/constants";
 import { contactLinks } from "@/lib/business";
 
@@ -113,8 +114,10 @@ export default function Services() {
           </p>
           <a
             href={contactLinks.sms}
-            className="shrink-0 rounded bg-amber-700 px-4 py-2 font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
+            aria-label="Get a quote via text message"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded bg-amber-700 px-4 py-2 font-bold text-white hover:bg-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
+            <ActionIcon actionType="sms" />
             Get a Quote
           </a>
         </div>

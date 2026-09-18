@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ServiceFAQ from "@/app/components/service-page/ServiceFAQ";
 import ServiceImage from "@/app/components/service-page/ServiceImage";
+import ActionIcon from "@/app/components/shared/ActionIcon";
 import Hero from "@/app/components/shared/Hero";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
@@ -194,7 +195,12 @@ export default function CouchSofaCleaningPage() {
           title="Professional Couch & Sofa Cleaning in Bolingbrook, IL"
           description="Professional deep cleaning for sofas, couches and sectionals in Bolingbrook and surrounding Chicago suburbs. We help remove built-up dirt, everyday spills, stains and odors using cleaning methods selected for the material and condition of the furniture."
           primaryAction={{ type: "responsiveQuote" }}
-          secondaryAction={{ label: "Call Us", href: contactLinks.telephone }}
+          secondaryAction={{
+            label: "Call Us",
+            href: contactLinks.telephone,
+            actionType: "phone",
+            ariaLabel: "Call NovaFiber",
+          }}
           backgroundImage="/image/services/couch-sofa/hero.jpg"
           backgroundPosition="center"
           overlay="service"
@@ -419,7 +425,12 @@ export default function CouchSofaCleaningPage() {
           </p>
           <div className="mt-7 flex flex-col gap-3 sm:flex-row">
             <ResponsiveQuoteLink className={primaryButton} />
-            <a href={contactLinks.telephone} className={secondaryButton}>
+            <a
+              href={contactLinks.telephone}
+              aria-label="Call NovaFiber"
+              className={`${secondaryButton} gap-2`}
+            >
+              <ActionIcon actionType="phone" />
               Call Us
             </a>
           </div>
