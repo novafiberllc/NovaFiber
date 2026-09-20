@@ -92,6 +92,7 @@ export default function ReviewCard({ item }) {
               href={item.reviewUrl}
               target="_blank"
               rel="noopener noreferrer"
+              data-analytics-event="google_reviews_click"
               className="swiper-no-swiping mt-4 inline-flex items-center gap-2 font-medium text-amber-700 hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
             >
               Read on Google

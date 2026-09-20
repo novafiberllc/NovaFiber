@@ -8,7 +8,7 @@ import { businessInfo, contactLinks } from "@/lib/business";
 import { serviceAreas } from "@/lib/service-area";
 import { mattressFaqs } from "@/lib/mattress-cleaning";
 
-const canonicalUrl = `${businessInfo.siteUrl}/services/mattress-cleaning/`;
+const canonicalUrl = `${businessInfo.siteUrl}/services/mattress-cleaning`;
 const metadataDescription =
   "Professional mattress cleaning in Bolingbrook, IL for built-up dirt, visible spots, stains and compatible odors. Send photos to NovaFiber for a quote.";
 const socialImage = `${businessInfo.siteUrl}/image/services/mattress-cleaning.jpg`;
@@ -245,7 +245,7 @@ export default function MattressCleaningPage() {
             </nav>
           }
           trustItems={[
-            `★ ${businessInfo.googleRating} Google Rating`,
+            `★ ${businessInfo.googleRating} Google Rating (${businessInfo.googleReviewCount} reviews)`,
             businessInfo.location.label,
             "Professional Equipment",
             "Stain & Odor Treatment",

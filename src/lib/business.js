@@ -24,7 +24,8 @@ const businessInfo = {
     country: "US",
     label: "Bolingbrook, IL",
   },
-  googleRating: "4.8",
+  googleRating: 4.9,
+  googleReviewCount: 28,
   socialProfiles: {
     google: "https://maps.app.goo.gl/38Ag59oe1xf9eJRz9",
     facebook: "https://www.facebook.com/profile.php?id=61576447468204",

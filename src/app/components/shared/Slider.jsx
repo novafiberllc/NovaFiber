@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 
@@ -7,7 +7,66 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default function Slider({ slides, CardComponent }) {
+const focusableSelector =
+  'a[href], button, input, select, textarea, [tabindex]';
+
+function syncSlideAccessibility(swiper) {
+  if (!swiper?.slides) return;
+
+  swiper.slides.forEach((slide) => {
+    const isVisible = slide.classList.contains("swiper-slide-visible");
+    slide.inert = !isVisible;
+    slide.setAttribute("aria-hidden", String(!isVisible));
+
+    slide.querySelectorAll(focusableSelector).forEach((element) => {
+      if (!isVisible) {
+        if (!element.hasAttribute("data-slider-tabindex")) {
+          element.setAttribute(
+            "data-slider-tabindex",
+            element.getAttribute("tabindex") ?? "",
+          );
+        }
+        element.setAttribute("tabindex", "-1");
+        return;
+      }
+
+      if (!element.hasAttribute("data-slider-tabindex")) return;
+
+      const originalTabIndex = element.getAttribute("data-slider-tabindex");
+      if (originalTabIndex) {
+        element.setAttribute("tabindex", originalTabIndex);
+      } else {
+        element.removeAttribute("tabindex");
+      }
+      element.removeAttribute("data-slider-tabindex");
+    });
+  });
+}
+
+export default function Slider({
+  slides,
+  CardComponent,
+  previousLabel = "Previous review",
+  nextLabel = "Next review",
+}) {
+  const [swiperInstance, setSwiperInstance] = useState(null);
+
+  useEffect(() => {
+    if (!swiperInstance) return undefined;
+
+    const sync = () => syncSlideAccessibility(swiperInstance);
+    const frame = requestAnimationFrame(sync);
+    const observer = new MutationObserver(sync);
+    observer.observe(swiperInstance.el, { childList: true, subtree: true });
+    window.addEventListener("resize", sync);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("resize", sync);
+    };
+  }, [swiperInstance]);
+
   return (
     <div className="relative  w-full mx-auto py-0">
       <Swiper
@@ -25,6 +84,17 @@ export default function Slider({ slides, CardComponent }) {
         spaceBetween={40}
         slidesPerView={1}
         allowTouchMove={false}
+        watchSlidesProgress={true}
+        onSwiper={(swiper) => {
+          setSwiperInstance(swiper);
+          requestAnimationFrame(() => syncSlideAccessibility(swiper));
+        }}
+        onSlideChange={(swiper) =>
+          requestAnimationFrame(() => syncSlideAccessibility(swiper))
+        }
+        onSlideChangeTransitionEnd={syncSlideAccessibility}
+        onBreakpoint={syncSlideAccessibility}
+        onResize={syncSlideAccessibility}
         breakpoints={{
           360: {
             slidesPerView: 1,
@@ -52,7 +122,7 @@ export default function Slider({ slides, CardComponent }) {
       {/* Back Button */}
       <button
         type="button"
-        aria-label="Previous review"
+        aria-label={previousLabel}
         className="swiper-button-prev-custom absolute -left-[5%] top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.1)] motion-safe:transition-colors hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700 sm:left-[1%] md:-left-[1%] desktop:left-[1%]"
       >
         <svg
@@ -73,7 +143,7 @@ export default function Slider({ slides, CardComponent }) {
       {/* Forward Button */}
       <button
         type="button"
-        aria-label="Next review"
+        aria-label={nextLabel}
         className="swiper-button-next-custom absolute -right-[5%] top-1/2 z-20 flex h-14 w-14 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0_8px_30px_rgb(0,0,0,0.1)] motion-safe:transition-colors hover:bg-gray-50 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700 sm:right-[1%] md:-right-[1%] desktop:right-[1%]"
       >
         <svg

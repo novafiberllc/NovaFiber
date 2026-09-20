@@ -8,7 +8,7 @@ import { businessInfo, contactLinks } from "@/lib/business";
 import { couchSofaFaqs } from "@/lib/couch-sofa-cleaning";
 import { serviceAreas } from "@/lib/service-area";
 
-const canonicalUrl = `${businessInfo.siteUrl}/services/couch-sofa-cleaning/`;
+const canonicalUrl = `${businessInfo.siteUrl}/services/couch-sofa-cleaning`;
 const metadataDescription =
   "Professional couch and sofa cleaning in Bolingbrook and nearby Chicago suburbs. View pricing, cleaning steps and request a quote from NovaFiber.";
 const socialImage = `${businessInfo.siteUrl}/image/services/couch-sofa-cleaning.jpg`;
@@ -232,7 +232,7 @@ export default function CouchSofaCleaningPage() {
             </nav>
           }
           trustItems={[
-            `★ ${businessInfo.googleRating} Google Rating`,
+            `★ ${businessInfo.googleRating} Google Rating (${businessInfo.googleReviewCount} reviews)`,
             businessInfo.location.label,
             "Professional Equipment",
             "Stain & Odor Treatment",

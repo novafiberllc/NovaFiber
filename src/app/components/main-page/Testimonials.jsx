@@ -29,7 +29,8 @@ export default function Testimonials() {
         href={googleBusinessProfileUrl}
         target="_blank"
         rel="noopener noreferrer"
-        aria-label={`View NovaFiber on Google Maps — rated ${businessInfo.googleRating} out of 5`}
+        aria-label={`View NovaFiber on Google Maps — rated ${businessInfo.googleRating} out of 5 from ${businessInfo.googleReviewCount} reviews`}
+        data-analytics-event="google_reviews_click"
         className="mb-5 inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap px-2 text-[1.25rem] tracking-widest text-amber-700 motion-safe:transition-colors motion-safe:duration-200 hover:text-amber-800 hover:underline hover:underline-offset-4 motion-safe:active:translate-y-px focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
       >
         <Image
@@ -40,7 +41,10 @@ export default function Testimonials() {
           className="h-5 w-5 shrink-0"
         />
         <span aria-hidden="true">★</span>
-        <span>{businessInfo.googleRating} on Google</span>
+        <span>
+          {businessInfo.googleRating} on Google ({businessInfo.googleReviewCount}{" "}
+          reviews)
+        </span>
       </a>
     </section>
   );

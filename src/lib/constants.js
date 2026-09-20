@@ -171,7 +171,7 @@ const services = [
       "Professional deep cleaning for sofas, couches and sectionals. We help remove built-up dirt, everyday spills, stains and odors to refresh your furniture.",
     image: "/image/services/couch-sofa-cleaning.jpg",
     alt: "Professional couch and sofa cleaning",
-    href: "/services/couch-sofa-cleaning/",
+    href: "/services/couch-sofa-cleaning",
   },
   {
     title: "Upholstery Cleaning",
@@ -179,7 +179,7 @@ const services = [
       "Professional cleaning for upholstered furniture including chairs, sectionals and other compatible fabric furniture affected by dirt, spills, stains and everyday use.",
     image: "/image/services/upholstery-cleaning.jpg",
     alt: "Professional upholstery cleaning",
-    href: "/services/upholstery-cleaning/",
+    href: "/services/upholstery-cleaning",
   },
   {
     title: "Mattress Cleaning",
@@ -187,7 +187,7 @@ const services = [
       "Professional mattress cleaning to remove accumulated dirt, visible spots and compatible odors while refreshing the sleeping surface.",
     image: "/image/services/mattress-cleaning.jpg",
     alt: "Professional mattress cleaning",
-    href: "/services/mattress-cleaning/",
+    href: "/services/mattress-cleaning",
   },
   {
     title: "Carpet Cleaning",
@@ -195,7 +195,7 @@ const services = [
       "Professional residential carpet cleaning designed to remove built-up soil, everyday stains and odors and improve the appearance of your carpets.",
     image: "/image/services/carpet-cleaning.jpg",
     alt: "Professional residential carpet cleaning",
-    href: "/services/carpet-cleaning/",
+    href: "/services/carpet-cleaning",
   },
   {
     title: "Pet Stain & Odor Removal",
@@ -203,7 +203,7 @@ const services = [
       "Targeted treatment for pet-related stains and odors on compatible upholstery and carpets. Results depend on the material, age of the stain and depth of contamination.",
     image: "/image/services/pet-stain-odor-removal.jpg",
     alt: "Pet stain and odor treatment for upholstery and carpet",
-    href: "/services/pet-stain-odor-removal/",
+    href: "/services/pet-stain-odor-removal",
   },
 ];
 

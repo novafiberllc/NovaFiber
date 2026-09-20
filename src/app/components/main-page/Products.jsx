@@ -18,7 +18,12 @@ export default function Products() {
         performed by NovaFiber · Bolingbrook, IL
       </p>
       <div className="max-w-90 sm:max-w-149 md:max-w-218.5 desktop:max-w-360 flex flex-col items-center">
-        <Slider slides={works} CardComponent={CompareSlider} />
+        <Slider
+          slides={works}
+          CardComponent={CompareSlider}
+          previousLabel="Previous result"
+          nextLabel="Next result"
+        />
       </div>
     </section>
   );

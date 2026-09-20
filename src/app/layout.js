@@ -4,6 +4,7 @@ import Footer from "./components/shared/Footer";
 import SiteHeader from "./components/shared/SiteHeader";
 import SkipLink from "./components/shared/SkipLink";
 import BackToTopButton from "./components/shared/BackToTopButton";
+import Analytics from "./components/shared/Analytics";
 
 const roboto = Roboto({
   variable: "--font-roboto",
@@ -36,6 +37,7 @@ export default function RootLayout({ children }) {
         </main>
         <Footer />
         <BackToTopButton />
+        <Analytics />
       </body>
     </html>
   );

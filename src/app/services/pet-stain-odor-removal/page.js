@@ -8,7 +8,7 @@ import { businessInfo, contactLinks } from "@/lib/business";
 import { serviceAreas } from "@/lib/service-area";
 import { petStainOdorFaqs } from "@/lib/pet-stain-odor-removal";
 
-const canonicalUrl = `${businessInfo.siteUrl}/services/pet-stain-odor-removal/`;
+const canonicalUrl = `${businessInfo.siteUrl}/services/pet-stain-odor-removal`;
 const metadataDescription =
   "Targeted pet stain and odor treatment for compatible upholstery and carpets in Bolingbrook, IL. Send photos to NovaFiber for an accurate quote.";
 const socialImage = `${businessInfo.siteUrl}/image/services/pet-stain-odor-removal.jpg`;
@@ -242,7 +242,7 @@ export default function PetStainOdorRemovalPage() {
             </nav>
           }
           trustItems={[
-            `★ ${businessInfo.googleRating} Google Rating`,
+            `★ ${businessInfo.googleRating} Google Rating (${businessInfo.googleReviewCount} reviews)`,
             businessInfo.location.label,
             "Professional Equipment",
             "Targeted Stain & Odor Treatment",

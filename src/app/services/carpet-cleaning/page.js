@@ -8,7 +8,7 @@ import { businessInfo, contactLinks } from "@/lib/business";
 import { carpetFaqs } from "@/lib/carpet-cleaning";
 import { serviceAreas } from "@/lib/service-area";
 
-const canonicalUrl = `${businessInfo.siteUrl}/services/carpet-cleaning/`;
+const canonicalUrl = `${businessInfo.siteUrl}/services/carpet-cleaning`;
 const metadataDescription =
   "Professional carpet cleaning in Bolingbrook, IL for built-up soil, everyday stains and compatible odors. Send photos to NovaFiber for a quote.";
 const socialImage = `${businessInfo.siteUrl}/image/services/carpet-cleaning.jpg`;
@@ -238,7 +238,7 @@ export default function CarpetCleaningPage() {
             </nav>
           }
           trustItems={[
-            `★ ${businessInfo.googleRating} Google Rating`,
+            `★ ${businessInfo.googleRating} Google Rating (${businessInfo.googleReviewCount} reviews)`,
             businessInfo.location.label,
             "Professional Equipment",
             "Stain & Odor Treatment",

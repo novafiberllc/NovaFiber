@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import ModalWindow from "../shared/ModalWindow";
 
 export default function Features() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = useCallback(() => setIsModalOpen(false), []);
 
   return (
     <>
@@ -89,7 +90,7 @@ export default function Features() {
       </section>
       <ModalWindow
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
+        onClose={closeModal}
       />
     </>
   );

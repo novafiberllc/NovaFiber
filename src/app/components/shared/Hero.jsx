@@ -49,7 +49,7 @@ const homeHero = {
     "Professional equipment",
     "Safe for pets & kids",
     "Discounts and Low Prices",
-    `★ ${businessInfo.googleRating} Google Rating | ${businessInfo.location.label}`,
+    `★ ${businessInfo.googleRating} Google Rating (${businessInfo.googleReviewCount} reviews) | ${businessInfo.location.label}`,
   ],
   primaryAction: {
     label: "Text Us",

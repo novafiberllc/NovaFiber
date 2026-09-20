@@ -10,7 +10,7 @@ import { services } from "@/lib/constants";
 import { serviceAreas } from "@/lib/service-area";
 
 const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY;
-const canonicalUrl = `${businessInfo.siteUrl}/service-area/`;
+const canonicalUrl = `${businessInfo.siteUrl}/service-area`;
 const metadataTitle =
   "Service Area in Bolingbrook & Chicago Suburbs | NovaFiber";
 const metadataDescription =
@@ -203,7 +203,7 @@ export default function ServiceAreaPage() {
             </nav>
           }
           trustItems={[
-            `★ ${businessInfo.googleRating} Google Rating`,
+            `★ ${businessInfo.googleRating} Google Rating (${businessInfo.googleReviewCount} reviews)`,
             "Based in Bolingbrook, IL",
             "Chicago Suburbs",
             "On-Site Cleaning Service",
