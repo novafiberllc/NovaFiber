@@ -17,7 +17,11 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${roboto.variable} h-full antialiased`}>
+    <html
+      lang="en"
+      data-scroll-behavior="smooth"
+      className={`${roboto.variable} h-full antialiased`}
+    >
       <body className="flex w-full flex-col items-center">
         <SkipLink />
         <div className="absolute top-0 z-40 w-full">

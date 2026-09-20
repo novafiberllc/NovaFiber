@@ -56,7 +56,6 @@ export default function ReviewCard({ item }) {
                 fill={true}
                 sizes="64px"
                 className="absolute inset-0 h-full w-full object-cover"
-                loading="eager"
                 onError={() => setAvatarFailed(true)}
               />
             )}

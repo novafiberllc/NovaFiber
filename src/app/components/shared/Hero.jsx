@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ActionIcon from "@/app/components/shared/ActionIcon";
 import ResponsiveQuoteLink from "@/app/components/shared/ResponsiveQuoteLink";
 import { businessInfo, contactLinks } from "@/lib/business";
@@ -103,13 +104,15 @@ export default function Hero({
   const resolvedBackgroundImage =
     content.backgroundImage || homeHero.backgroundImage;
 
-  const backgroundStyle = {
-    backgroundImage: `url(${resolvedBackgroundImage})`,
-    backgroundSize: "cover",
-    ...(!backgroundPositionClassName && { backgroundPosition }),
-  };
+  const imagePositionClassName = backgroundPositionClassName
+    ? backgroundPositionClassName === "bg-left md:bg-center"
+      ? "object-left md:object-center"
+      : "object-center"
+    : "";
 
-  const backgroundClassName = backgroundPositionClassName || "bg-center";
+  const backgroundStyle = backgroundPositionClassName
+    ? undefined
+    : { objectPosition: backgroundPosition };
 
   const overlayClass =
     overlay === "service" ? "bg-slate-900/55" : "bg-slate-900/60";
@@ -117,8 +120,14 @@ export default function Hero({
   if (content.variant === "home") {
     return (
       <section className="relative w-full overflow-hidden">
-        <div
-          className={`absolute inset-0 bg-cover ${backgroundClassName}`}
+        <Image
+          src={resolvedBackgroundImage}
+          alt=""
+          aria-hidden="true"
+          fill={true}
+          preload={true}
+          sizes="100vw"
+          className={`object-cover ${imagePositionClassName}`}
           style={backgroundStyle}
         />
         <div className={`absolute inset-0 ${overlayClass}`} />
@@ -150,8 +159,14 @@ export default function Hero({
 
   return (
     <section className="relative w-full overflow-hidden">
-      <div
-        className={`absolute inset-0 bg-cover ${backgroundClassName}`}
+      <Image
+        src={resolvedBackgroundImage}
+        alt=""
+        aria-hidden="true"
+        fill={true}
+        preload={true}
+        sizes="100vw"
+        className={`object-cover ${imagePositionClassName}`}
         style={backgroundStyle}
       />
       <div className={`absolute inset-0 ${overlayClass}`} />
