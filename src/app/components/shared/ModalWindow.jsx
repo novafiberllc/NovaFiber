@@ -1,22 +1,111 @@
 "use client";
 
 import { X } from "lucide-react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { modalContent } from "@/lib/constants";
 
-export default function ModalWindow({ isOpen, onClose, content }) {
-  // Prevent body scroll when modal is open
+export default function ModalWindow({ isOpen, onClose }) {
+  const overlayRef = useRef(null);
+  const dialogRef = useRef(null);
+  const closeButtonRef = useRef(null);
+  const openerRef = useRef(null);
+
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
+    if (!isOpen) return undefined;
+
+    openerRef.current = document.activeElement;
+    const previousBodyOverflow = document.body.style.overflow;
+    const isolatedElements = [];
+    let currentElement = overlayRef.current;
+
+    while (currentElement && currentElement !== document.body) {
+      const parent = currentElement.parentElement;
+      if (!parent) break;
+
+      Array.from(parent.children).forEach((sibling) => {
+        if (sibling === currentElement || !(sibling instanceof HTMLElement)) {
+          return;
+        }
+
+        isolatedElements.push({
+          element: sibling,
+          inert: sibling.inert,
+          ariaHidden: sibling.getAttribute("aria-hidden"),
+        });
+        sibling.inert = true;
+        sibling.setAttribute("aria-hidden", "true");
+      });
+
+      currentElement = parent;
     }
 
-    return () => {
-      document.body.style.overflow = "unset";
+    document.body.style.overflow = "hidden";
+
+    const focusFrame = requestAnimationFrame(() => {
+      closeButtonRef.current?.focus();
+    });
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (event.key !== "Tab") return;
+
+      const dialog = dialogRef.current;
+      if (!dialog) return;
+
+      const focusableElements = Array.from(
+        dialog.querySelectorAll(
+          'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
+      ).filter((element) => !element.closest("[inert]"));
+
+      if (focusableElements.length === 0) {
+        event.preventDefault();
+        dialog.focus();
+        return;
+      }
+
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      } else if (!dialog.contains(document.activeElement)) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     };
-  }, [isOpen]);
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      document.removeEventListener("keydown", handleKeyDown);
+      document.body.style.overflow = previousBodyOverflow;
+
+      isolatedElements.forEach(({ element, inert, ariaHidden }) => {
+        element.inert = inert;
+        if (ariaHidden === null) {
+          element.removeAttribute("aria-hidden");
+        } else {
+          element.setAttribute("aria-hidden", ariaHidden);
+        }
+      });
+
+      const opener = openerRef.current;
+      if (opener instanceof HTMLElement && opener.isConnected) {
+        requestAnimationFrame(() => opener.focus());
+      }
+    };
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -28,29 +117,30 @@ export default function ModalWindow({ isOpen, onClose, content }) {
 
   return (
     <div
+      ref={overlayRef}
       className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50"
       onClick={handleBackdropClick}
       role="presentation"
     >
       {/* Modal Container */}
       <div
+        ref={dialogRef}
         className="bg-white rounded-lg shadow-xl max-h-[90vh] overflow-y-auto w-full max-w-2xl transform transition-transform duration-300 scale-100 animate-scale-in"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-title"
+        tabIndex={-1}
       >
         {/* Header */}
         <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between">
           <h2 id="modal-title" className="text-2xl font-bold text-gray-800">
-            {content === "Pricing"
-              ? modalContent.Pricing.title
-              : content === "Area"
-                ? modalContent.Area.title
-                : modalContent.Materials.title}
+            {modalContent.Materials.title}
           </h2>
           <button
+            ref={closeButtonRef}
+            type="button"
             onClick={onClose}
-            className="p-1 hover:bg-gray-100 rounded-full transition-colors"
+            className="flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full transition-colors hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-700"
             aria-label="Close modal"
           >
             <X size={24} className="text-gray-600" />
@@ -59,22 +149,7 @@ export default function ModalWindow({ isOpen, onClose, content }) {
 
         {/* Content */}
         <div className="px-6 py-8">
-          <p>
-            {content === "Pricing"
-              ? modalContent.Pricing.description
-              : content === "Area"
-                ? modalContent.Area.description
-                : modalContent.Materials.description}
-          </p>
-          {content === "Area" && (
-            <div className="mt-4">
-              <ul className="list-disc list-inside text-gray-600">
-                {modalContent.Area.locations.sort().map((location, index) => (
-                  <li key={index}>{location}</li>
-                ))}
-              </ul>
-            </div>
-          )}
+          <p>{modalContent.Materials.description}</p>
         </div>
       </div>
 

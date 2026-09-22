@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import Link from "next/link";
 import { MoveRight } from "lucide-react";
 import ModalWindow from "../shared/ModalWindow";
 
 export default function Features() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("");
+  const closeModal = useCallback(() => setIsModalOpen(false), []);
 
   return (
     <>
@@ -30,42 +31,42 @@ export default function Features() {
             delivering fast and reliable sofa and carpet cleaning right to your
             doorstep. Wherever you are, we’re ready to help.
           </p>
-          <button
-            onClick={() => {
-              setIsModalOpen(true);
-              setModalContent("Area");
-            }}
-            className="flex flex-row justify-start items-center gap-3.5 cursor-pointer hover:opacity-80 transition-opacity"
+          <Link
+            href="/service-area"
+            aria-label="Learn more about NovaFiber service areas"
+            className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
-            <p className="text-amber-600">More Info</p>
+            <p>More Info</p>
             <MoveRight
-              className="text-amber-600 max-w-12"
+              aria-hidden="true"
+              focusable="false"
+              className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
-          </button>
+          </Link>
         </div>
-        <div id="pricing" className="max-w-71 desktop:justify-self-center">
+        <div className="max-w-71 desktop:justify-self-center">
           <p className="text-2xl font-bold mb-5">Flexible Pricing</p>
           <p className="mb-3.5 text-justify">
             Enjoy transparent, flexible pricing tailored to your needs. We
             provide quick, accurate estimates and personalized solutions—so you
             always know what to expect, with no surprises.
           </p>
-          <button
-            onClick={() => {
-              setIsModalOpen(true);
-              setModalContent("Pricing");
-            }}
-            className="flex flex-row justify-start items-center gap-3.5 cursor-pointer hover:opacity-80 transition-opacity"
+          <Link
+            href="#pricing"
+            aria-label="View NovaFiber pricing"
+            className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
-            <p className="text-amber-600">More Info</p>
+            <p>More Info</p>
             <MoveRight
-              className="text-amber-600 max-w-12"
+              aria-hidden="true"
+              focusable="false"
+              className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
-          </button>
+          </Link>
         </div>
         <div className="max-w-71 justify-self-center">
           <p className="text-2xl font-bold mb-5">Professional Materials</p>
@@ -75,15 +76,12 @@ export default function Features() {
             long-lasting results.
           </p>
           <button
-            onClick={() => {
-              setIsModalOpen(true);
-              setModalContent("Materials");
-            }}
-            className="flex flex-row justify-start items-center gap-3.5 cursor-pointer"
+            onClick={() => setIsModalOpen(true)}
+            className="flex cursor-pointer flex-row items-center justify-start gap-3.5 text-amber-700 transition-colors hover:text-amber-800 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-700"
           >
-            <p className="text-amber-600">More Info</p>
+            <p>More Info</p>
             <MoveRight
-              className="text-amber-600 max-w-12"
+              className="max-w-12"
               strokeWidth={0.5}
               size={42}
             />
@@ -92,8 +90,7 @@ export default function Features() {
       </section>
       <ModalWindow
         isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        content={modalContent}
+        onClose={closeModal}
       />
     </>
   );
